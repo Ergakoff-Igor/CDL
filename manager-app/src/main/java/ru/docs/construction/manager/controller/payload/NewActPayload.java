@@ -11,6 +11,8 @@ public record NewActPayload(
 //        @Size(min = 3, max = 50, message = "{catalogue.products.create.errors.title_size_is_invalid}")
         String month,
 
+        Short year,
+
         @NotEmpty(message = "{catalogue.acts.create.errors.section_is_null}")
 //        @Size(max = 1000, message = "{catalogue.products.create.errors.details_size_is_invalid}")
         String section,

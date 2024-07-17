@@ -7,6 +7,8 @@ public record UpdateActPayload(
         @NotEmpty(message = "{catalogue.acts.update.errors.month_is_null}")
         String month,
 
+        Short year,
+
         @NotEmpty(message = "{catalogue.acts.update.errors.section_is_null}")
         String section,
 

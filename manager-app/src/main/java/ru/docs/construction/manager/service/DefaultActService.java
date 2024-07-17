@@ -22,8 +22,8 @@ public class DefaultActService implements ActService {
     }
 
     @Override
-    public Act createAct(String month, String section, Double price) {
-        return this.actRepository.save(new Act(null, month, section, price, ActStatus.CHECKING_QC));
+    public Act createAct(String month, Short year, String section, Double price) {
+        return this.actRepository.save(new Act(null, month, year, section, price, ActStatus.CHECKING_QC));
     }
 
     @Override
@@ -32,10 +32,11 @@ public class DefaultActService implements ActService {
     }
 
     @Override
-    public void updateAct(Long id, String month, String section, Double price, ActStatus actStatus) {
+    public void updateAct(Long id, String month, Short year, String section, Double price, ActStatus actStatus) {
         this.actRepository.findById(id)
                 .ifPresentOrElse(act -> {
                     act.setMonth(month);
+                    act.setYear(year);
                     act.setSection(section);
                     act.setPrice(price);
                     act.setActStatus(actStatus);

@@ -21,7 +21,7 @@
 <div class="container">
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" data-th-href="@{/catalogue/acts/list}">К журналу актов</a>
+            <a class="navbar-brand" th:href="@{/catalogue/acts/list}">К журналу актов</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Переключатель навигации">
@@ -30,63 +30,59 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" data-th-href="@{/catalogue/acts/{actId}(actId=${act.id})}">К акту &laquo;[[${act.month}]] &ndash; [[${act.section}]]&raquo;</a>
+                        <a class="nav-link active" aria-current="page"
+                           th:href="@{/catalogue/acts/{actId}(actId=${act.id})}">К акту &laquo;[[${act.month}]]
+                            &ndash; [[${act.section}]]&raquo;</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-<!--    <a data-th-href="@{/catalogue/acts/{actId}(actId=${act.id})}">&larr; К акту</a>-->
     <h3 class="text-center">Редактирование акта &laquo;[[${act.month}]] &ndash; [[${act.section}]]&raquo;</h3>
-    <div data-th-if="${errors}">
+    <div th:if="${errors}">
         <h2>Допущены ошибки</h2>
         <ul>
-            <li data-th-each="error: ${errors}" data-th-text="${error}"></li>
+            <li th:each="error: ${errors}" th:text="${error}"></li>
         </ul>
     </div>
-    <form method="post" data-th-action="@{/catalogue/acts/{actId}/edit(actId=${act.id})}">
+    <form method="post" th:action="@{/catalogue/acts/{actId}/edit(actId=${act.id})}">
         <div class="mb-3">
             <label class="form-label">Отчетный период:<br>
-            <input list="datalistMouths" data-th-value="${payload != null ? payload.month : act.month}" name="month" placeholder="Отчетный период"
-                   class="form-control">
-            <datalist id="datalistMouths">
-                <option value="Январь">
-                <option value="Февраль">
-                <option value="Март">
-                <option value="Апрель">
-                <option value="Май">
-                <option value="Июнь">
-                <option value="Июль">
-                <option value="Август">
-                <option value="Сентябрь">
-                <option value="Октябрь">
-                <option value="Ноябрь">
-                <option value="Декабрь">
-            </datalist>
+                <input list="datalistMouths" th:value="${payload != null ? payload.month : act.month}" name="month"
+                       placeholder="Месяц"
+                       class="form-control">
+                <datalist id="datalistMouths">
+                    <option value="Январь">
+                    <option value="Февраль">
+                    <option value="Март">
+                    <option value="Апрель">
+                    <option value="Май">
+                    <option value="Июнь">
+                    <option value="Июль">
+                    <option value="Август">
+                    <option value="Сентябрь">
+                    <option value="Октябрь">
+                    <option value="Ноябрь">
+                    <option value="Декабрь">
+                </datalist>
+            </label>
+            <label class="form-label">
+                <input type="number" th:value="${payload != null ? payload.year : act.year}" name="year" placeholder="Год" class="form-control">
             </label>
         </div>
-<!--        <label>-->
-<!--            Месяц:<br>-->
-<!--            <input type="text" name="month" data-th-value="${payload != null ? payload.month : act.month}">-->
-<!--        </label><br>-->
         <div class="mb-3">
             <label class="form-label">Раздел проекта:<br>
-                <input type="text" data-th-value="${payload != null ? payload.section : act.section}" name="section" placeholder="Раздел проекта" class="form-control">
+                <input type="text" th:value="${payload != null ? payload.section : act.section}" name="section"
+                       placeholder="Раздел проекта" class="form-control">
             </label>
         </div>
         <div class="mb-3">
             <label class="form-label">Стоимость:<br>
-                <input type="text" data-th-value="${payload != null ? payload.price : act.price}" name="price" placeholder="Стоимость" class="form-control">
+                <input type="text" th:value="${payload != null ? payload.price : act.price}" name="price"
+                       placeholder="Стоимость" class="form-control">
             </label>
+            <span class="form-text"> &#8381 </span>
         </div>
-<!--        <label>-->
-<!--            Раздел проекта:<br>-->
-<!--            <input type="text" name="section" data-th-value="${payload != null ? payload.section : act.section}">-->
-<!--        </label><br>-->
-<!--        <label>-->
-<!--            Стоимость:<br>-->
-<!--            <input type="text" name="price" data-th-value="${payload != null ? payload.price : act.price}">-->
-<!--        </label><br>-->
         <button type="submit" class="btn btn-primary">Изменить</button>
     </form>
 </div>

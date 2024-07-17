@@ -4,17 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="508ca5a5-2a9f-40e3-8a06-75479503d0aa" name="Changes" comment="CDL. MVP">
-      <change afterPath="$PROJECT_DIR$/manager-app/src/main/java/ru/docs/construction/manager/controller/payload/NewActPayload.java" afterDir="false" />
+    <list default="true" id="508ca5a5-2a9f-40e3-8a06-75479503d0aa" name="Changes" comment="CDL. Add validation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/manager-app/src/main/java/ru/docs/construction/manager/controller/ActController.java" beforeDir="false" afterPath="$PROJECT_DIR$/manager-app/src/main/java/ru/docs/construction/manager/controller/ActController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/manager-app/src/main/java/ru/docs/construction/manager/controller/ActsLogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/manager-app/src/main/java/ru/docs/construction/manager/controller/ActsLogController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manager-app/src/main/java/ru/docs/construction/manager/controller/CheckingActController.java" beforeDir="false" afterPath="$PROJECT_DIR$/manager-app/src/main/java/ru/docs/construction/manager/controller/CheckingActController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manager-app/src/main/java/ru/docs/construction/manager/controller/payload/NewProductPayload.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manager-app/src/main/java/ru/docs/construction/manager/controller/payload/UpdateProductPayload.java" beforeDir="false" afterPath="$PROJECT_DIR$/manager-app/src/main/java/ru/docs/construction/manager/controller/payload/UpdateActPayload.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manager-app/src/main/java/ru/docs/construction/manager/controller/payload/NewActPayload.java" beforeDir="false" afterPath="$PROJECT_DIR$/manager-app/src/main/java/ru/docs/construction/manager/controller/payload/NewActPayload.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manager-app/src/main/java/ru/docs/construction/manager/controller/payload/UpdateActPayload.java" beforeDir="false" afterPath="$PROJECT_DIR$/manager-app/src/main/java/ru/docs/construction/manager/controller/payload/UpdateActPayload.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manager-app/src/main/java/ru/docs/construction/manager/entity/Act.java" beforeDir="false" afterPath="$PROJECT_DIR$/manager-app/src/main/java/ru/docs/construction/manager/entity/Act.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/manager-app/src/main/java/ru/docs/construction/manager/service/ActService.java" beforeDir="false" afterPath="$PROJECT_DIR$/manager-app/src/main/java/ru/docs/construction/manager/service/ActService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/manager-app/src/main/java/ru/docs/construction/manager/service/DefaultActService.java" beforeDir="false" afterPath="$PROJECT_DIR$/manager-app/src/main/java/ru/docs/construction/manager/service/DefaultActService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manager-app/src/main/resources/messages.properties" beforeDir="false" afterPath="$PROJECT_DIR$/manager-app/src/main/resources/messages.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manager-app/src/main/resources/templates/catalogue/acts/act.html" beforeDir="false" afterPath="$PROJECT_DIR$/manager-app/src/main/resources/templates/catalogue/acts/act.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manager-app/src/main/resources/templates/catalogue/acts/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/manager-app/src/main/resources/templates/catalogue/acts/edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manager-app/src/main/resources/templates/catalogue/acts/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/manager-app/src/main/resources/templates/catalogue/acts/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manager-app/src/main/resources/templates/catalogue/acts/new_act.html" beforeDir="false" afterPath="$PROJECT_DIR$/manager-app/src/main/resources/templates/catalogue/acts/new_act.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,6 +136,7 @@
       <workItem from="1719953523406" duration="127000" />
       <workItem from="1720029632366" duration="1142000" />
       <workItem from="1721235834523" duration="157000" />
+      <workItem from="1721236007277" duration="6561000" />
     </task>
     <task id="LOCAL-00001" summary="CDL. MVP">
       <option name="closed" value="true" />
@@ -143,7 +146,15 @@
       <option name="project" value="LOCAL" />
       <updated>1719950162813</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="CDL. Add validation">
+      <option name="closed" value="true" />
+      <created>1721236477085</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1721236477085</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,7 +162,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="CDL. MVP" />
-    <option name="LAST_COMMIT_MESSAGE" value="CDL. MVP" />
+    <MESSAGE value="CDL. Add validation" />
+    <option name="LAST_COMMIT_MESSAGE" value="CDL. Add validation" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

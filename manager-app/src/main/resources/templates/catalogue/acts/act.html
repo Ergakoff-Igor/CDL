@@ -35,10 +35,10 @@
     <div class="card" style="width: 18rem;">
         <div class="card-body">
             <ul>
-                <li><strong>ID</strong>: <span data-th-text="${act.id}"></span></li>
-                <li><strong>Месяц</strong>: <span data-th-text="${act.month}"></span></li>
-                <li><strong>Раздел проекта</strong>: <span data-th-text="${act.section}"></span></li>
-                <li><strong>Стоимость</strong>: <span data-th-text="${act.price}"></span></li>
+                <li><strong>ID</strong>: <span th:text="${act.id}"></span></li>
+                <li><strong>Период</strong>: <span th:text="${act.month}"></span> <span th:text="${act.year}"></span></li>
+                <li><strong>Раздел проекта</strong>: <span th:text="${act.section}"></span></li>
+                <li><strong>Стоимость</strong>: <span th:text="${act.price}"></span> &#8381</li>
             </ul>
             <form id="correctionForm" class="text-center" th:method="POST"
                   th:action="@{/catalogue/acts/{actId}/{actStatus}/turnStatus(actId=${act.id}, actStatus='correction')}">

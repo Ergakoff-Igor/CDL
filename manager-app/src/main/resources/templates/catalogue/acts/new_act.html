@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Создание акта</title>
@@ -25,85 +25,43 @@
             <li data-th-each="error: ${errors}" data-th-text="${error}"></li>
         </ul>
     </div>
-    <form method="post" data-th-action="@{/catalogue/acts/create}">
+    <form method="post" th:action="@{/catalogue/acts/create}">
         <div class="mb-3">
             <label class="form-label">Отчетный период:<br>
-            <input list="datalistMouths" type="text" name="month" data-th-value="${payload?.month}"
-                   placeholder="Отчетный период"
-                   class="form-control">
-            <datalist id="datalistMouths">
-                <option value="Январь">
-                <option value="Февраль">
-                <option value="Март">
-                <option value="Апрель">
-                <option value="Май">
-                <option value="Июнь">
-                <option value="Июль">
-                <option value="Август">
-                <option value="Сентябрь">
-                <option value="Октябрь">
-                <option value="Ноябрь">
-                <option value="Декабрь">
-            </datalist>
+                <input list="datalistMouths" type="text" name="month" th:value="${payload?.month}"
+                       placeholder="Месяц"
+                       class="form-control">
+                <datalist id="datalistMouths">
+                    <option value="Январь">
+                    <option value="Февраль">
+                    <option value="Март">
+                    <option value="Апрель">
+                    <option value="Май">
+                    <option value="Июнь">
+                    <option value="Июль">
+                    <option value="Август">
+                    <option value="Сентябрь">
+                    <option value="Октябрь">
+                    <option value="Ноябрь">
+                    <option value="Декабрь">
+                </datalist>
+                <input type="number" th:value="${payload?.year}" name="year" placeholder="Год" class="form-control">
             </label>
         </div>
         <div class="mb-3">
             <label class="form-label">Раздел проекта:<br>
-            <input type="text" data-th-value="${payload?.section}" name="section" placeholder="Раздел проекта" class="form-control">
+                <input type="text" th:value="${payload?.section}" name="section" placeholder="Раздел проекта"
+                       class="form-control">
             </label>
         </div>
         <div class="mb-3">
             <label class="form-label">Стоимость:<br>
-            <input type="text" data-th-value="${payload?.price}" name="price" placeholder="Стоимость" class="form-control">
+                <input type="text" th:value="${payload?.price}" name="price" placeholder="Стоимость, &#8381"
+                       class="form-control">
             </label>
         </div>
-
-
-<!--        <label>-->
-<!--            Отчетный период:<br>-->
-<!--            <input type="text" name="month" data-th-value="${payload?.month}">-->
-<!--        </label><br>-->
-<!--        <label>-->
-<!--            Раздел проекта:<br>-->
-<!--            <input type="text" name="section" data-th-value="${payload?.section}">-->
-<!--        </label><br>-->
-<!--        <label>-->
-<!--            Стоимость:<br>-->
-<!--            <input type="text" name="price" data-th-value="${payload?.price}">-->
-<!--        </label><br>-->
-
         <button type="submit" class="btn btn-primary">Создать акт</button>
     </form>
 </div>
 </body>
 </html>
-
-<!--<div class="mb-3">-->
-<!--    <label for="month" class="form-label">Отчетный период</label>-->
-<!--    <input list="datalistMouths" type="text" id="month" data-th-value="${payload?.month}"-->
-<!--           placeholder="Отчетный период"-->
-<!--           class="form-control">-->
-<!--    <datalist id="datalistMouths">-->
-<!--        <option value="Январь">-->
-<!--        <option value="Февраль">-->
-<!--        <option value="Март">-->
-<!--        <option value="Апрель">-->
-<!--        <option value="Май">-->
-<!--        <option value="Июнь">-->
-<!--        <option value="Июль">-->
-<!--        <option value="Август">-->
-<!--        <option value="Сентябрь">-->
-<!--        <option value="Октябрь">-->
-<!--        <option value="Ноябрь">-->
-<!--        <option value="Декабрь">-->
-<!--    </datalist>-->
-<!--</div>-->
-
-<!--<div class="mb-3">-->
-<!--    <label for="section" class="form-label">Раздел проекта</label>-->
-<!--    <input type="text" data-th-value="${payload?.section}" id="section" placeholder="Раздел проекта" class="form-control">-->
-<!--</div>-->
-<!--<div class="mb-3">-->
-<!--    <label for="price" class="form-label">Стоимость</label>-->
-<!--    <input type="text" data-th-value="${payload?.price}" id="price" placeholder="Стоимость" class="form-control">-->
-<!--</div>-->

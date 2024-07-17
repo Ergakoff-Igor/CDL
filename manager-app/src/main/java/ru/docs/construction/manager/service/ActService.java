@@ -10,11 +10,11 @@ public interface ActService {
 
     List<Act> findAllActs();
 
-    Act createAct(String month, String section, Double price);
+    Act createAct(String month, Short year, String section, Double price);
 
     Optional<Act> findAct(long productId);
 
-    void updateAct(Long id, String month, String section, Double price, ActStatus actStatus);
+    void updateAct(Long id, String month, Short year, String section, Double price, ActStatus actStatus);
 
     void deleteAct(Long id);
 

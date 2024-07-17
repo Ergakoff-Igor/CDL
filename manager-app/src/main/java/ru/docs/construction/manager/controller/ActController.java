@@ -56,7 +56,7 @@ public class ActController {
                     .toList());
             return "catalogue/acts/edit";
         } else {
-            this.actService.updateAct(act.getId(), payload.month(), payload.section(), payload.price(), act.getActStatus());
+            this.actService.updateAct(act.getId(), payload.month(), payload.year(), payload.section(), payload.price(), act.getActStatus());
             return "redirect:/catalogue/acts/%d".formatted(act.getId());
         }
     }

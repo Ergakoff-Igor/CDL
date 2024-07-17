@@ -44,7 +44,7 @@ public class ActsLogController {
                     .toList());
             return "catalogue/acts/new_act";
         } else {
-            Act act = this.actService.createAct(payload.month(), payload.section(), payload.price());
+            Act act = this.actService.createAct(payload.month(), payload.year(), payload.section(), payload.price());
             return "redirect:/catalogue/acts/%d".formatted(act.getId());
         }
     }

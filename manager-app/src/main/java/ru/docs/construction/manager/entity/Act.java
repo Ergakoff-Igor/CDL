@@ -16,6 +16,8 @@ public class Act {
 
     private String month;
 
+    private Short year;
+
     private String section;
 
     private Double price;
