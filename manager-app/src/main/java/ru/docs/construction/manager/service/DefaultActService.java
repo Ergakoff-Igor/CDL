@@ -14,26 +14,26 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class DefaultActService implements ActService {
 
-    private final ActRepository productRepository;
+    private final ActRepository actRepository;
 
     @Override
-    public List<Act> findAllProducts() {
-        return this.productRepository.findAll();
+    public List<Act> findAllActs() {
+        return this.actRepository.findAll();
     }
 
     @Override
-    public Act createProduct(String month, String section, Double price) {
-        return this.productRepository.save(new Act(null, month, section, price, ActStatus.CHECKING_QC));
+    public Act createAct(String month, String section, Double price) {
+        return this.actRepository.save(new Act(null, month, section, price, ActStatus.CHECKING_QC));
     }
 
     @Override
-    public Optional<Act> findProduct(long actId) {
-        return this.productRepository.findById(actId);
+    public Optional<Act> findAct(long actId) {
+        return this.actRepository.findById(actId);
     }
 
     @Override
-    public void updateProduct(Long id, String month, String section, Double price, ActStatus actStatus) {
-        this.productRepository.findById(id)
+    public void updateAct(Long id, String month, String section, Double price, ActStatus actStatus) {
+        this.actRepository.findById(id)
                 .ifPresentOrElse(act -> {
                     act.setMonth(month);
                     act.setSection(section);
@@ -45,13 +45,13 @@ public class DefaultActService implements ActService {
     }
 
     @Override
-    public void deleteProduct(Long id) {
-        this.productRepository.deleteById(id);
+    public void deleteAct(Long id) {
+        this.actRepository.deleteById(id);
     }
 
     @Override
     public void updateActStatus(Long id, ActStatus actStatus) {
-        this.productRepository.findById(id)
+        this.actRepository.findById(id)
                 .ifPresentOrElse(act -> act.setActStatus(actStatus), () -> {
                     throw new NoSuchElementException();
                 });

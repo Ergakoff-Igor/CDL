@@ -8,15 +8,15 @@ import java.util.Optional;
 
 public interface ActService {
 
-    List<Act> findAllProducts();
+    List<Act> findAllActs();
 
-    Act createProduct(String month, String section, Double price);
+    Act createAct(String month, String section, Double price);
 
-    Optional<Act> findProduct(long productId);
+    Optional<Act> findAct(long productId);
 
-    void updateProduct(Long id, String month, String section, Double price, ActStatus actStatus);
+    void updateAct(Long id, String month, String section, Double price, ActStatus actStatus);
 
-    void deleteProduct(Long id);
+    void deleteAct(Long id);
 
     void updateActStatus(Long id, ActStatus actStatus);
 }

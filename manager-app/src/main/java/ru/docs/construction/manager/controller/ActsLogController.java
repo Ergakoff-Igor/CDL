@@ -1,6 +1,7 @@
 package ru.docs.construction.manager.controller;
 
-import ru.docs.construction.manager.controller.payload.NewProductPayload;
+import org.springframework.validation.annotation.Validated;
+import ru.docs.construction.manager.controller.payload.NewActPayload;
 import ru.docs.construction.manager.entity.Act;
 import ru.docs.construction.manager.service.ActService;
 import jakarta.validation.Valid;
@@ -21,19 +22,19 @@ public class ActsLogController {
     private final ActService actService;
 
     @GetMapping("list")
-    public String getProductsList(Model model) {
-        model.addAttribute("acts", this.actService.findAllProducts());
+    public String getActsList(Model model) {
+        model.addAttribute("acts", this.actService.findAllActs());
         return "catalogue/acts/index";
     }
 
     @GetMapping("create")
-    public String getNewProductPage() {
+    public String getNewActPage() {
         return "catalogue/acts/new_act";
 
     }
 
     @PostMapping("create")
-    public String createProduct(@Valid NewProductPayload payload,
+    public String createAct(@Validated NewActPayload payload,
                                 BindingResult bindingResult,
                                 Model model) {
         if (bindingResult.hasErrors()) {
@@ -43,7 +44,7 @@ public class ActsLogController {
                     .toList());
             return "catalogue/acts/new_act";
         } else {
-            Act act = this.actService.createProduct(payload.month(), payload.section(), payload.price());
+            Act act = this.actService.createAct(payload.month(), payload.section(), payload.price());
             return "redirect:/catalogue/acts/%d".formatted(act.getId());
         }
     }

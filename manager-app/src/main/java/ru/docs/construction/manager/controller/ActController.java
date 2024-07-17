@@ -1,6 +1,7 @@
 package ru.docs.construction.manager.controller;
 
-import ru.docs.construction.manager.controller.payload.UpdateProductPayload;
+import org.springframework.validation.annotation.Validated;
+import ru.docs.construction.manager.controller.payload.UpdateActPayload;
 import ru.docs.construction.manager.entity.Act;
 import ru.docs.construction.manager.service.ActService;
 import jakarta.servlet.http.HttpServletResponse;
@@ -29,23 +30,23 @@ public class ActController {
 
     @ModelAttribute("act")
     public Act act(@PathVariable("actId") long actId) {
-        return this.actService.findProduct(actId)
+        return this.actService.findAct(actId)
                 .orElseThrow(() -> new NoSuchElementException("catalogue.errors.act.not_found"));
     }
 
     @GetMapping
-    public String getProduct() {
+    public String getAct() {
         return "catalogue/acts/act";
     }
 
     @GetMapping("edit")
-    public String getProductEditPage() {
+    public String getActEditPage() {
         return "catalogue/acts/edit";
     }
 
     @PostMapping("edit")
-    public String updateProduct(@ModelAttribute(name = "act", binding = false) Act act,
-                                @Valid UpdateProductPayload payload,
+    public String updateAct(@ModelAttribute(name = "act", binding = false) Act act,
+                                @Validated UpdateActPayload payload,
                                 BindingResult bindingResult,
                                 Model model) {
         if (bindingResult.hasErrors()) {
@@ -55,14 +56,14 @@ public class ActController {
                     .toList());
             return "catalogue/acts/edit";
         } else {
-            this.actService.updateProduct(act.getId(), payload.month(), payload.section(), payload.price(), act.getActStatus());
+            this.actService.updateAct(act.getId(), payload.month(), payload.section(), payload.price(), act.getActStatus());
             return "redirect:/catalogue/acts/%d".formatted(act.getId());
         }
     }
 
     @PostMapping("delete")
-    public String deleteProduct(@ModelAttribute("act") Act act) {
-        this.actService.deleteProduct(act.getId());
+    public String deleteAct(@ModelAttribute("act") Act act) {
+        this.actService.deleteAct(act.getId());
         return "redirect:/catalogue/acts/list";
     }
 
