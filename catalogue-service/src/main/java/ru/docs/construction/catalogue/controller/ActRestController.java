@@ -1,8 +1,7 @@
 package ru.docs.construction.catalogue.controller;
 
-import ru.docs.construction.catalogue.controller.payload.UpdateProductPayload;
-import ru.docs.construction.catalogue.entity.Product;
-import ru.docs.construction.catalogue.service.ProductService;
+import ru.docs.construction.catalogue.controller.payload.UpdateActPayload;
+import ru.docs.construction.catalogue.entity.Act;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.MessageSource;
@@ -12,33 +11,35 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindException;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import ru.docs.construction.catalogue.service.ActService;
 
 import java.util.Locale;
 import java.util.NoSuchElementException;
 
+
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("catalogue-api/products/{productId:\\d+}")
-public class ProductRestController {
+@RequestMapping("catalogue-api/acts/{actId:\\d+}")
+public class ActRestController {
 
-    private final ProductService productService;
+    private final ActService actService;
 
     private final MessageSource messageSource;
 
-    @ModelAttribute("product")
-    public Product getProduct(@PathVariable("productId") int productId) {
-        return this.productService.findProduct(productId)
-                .orElseThrow(() -> new NoSuchElementException("catalogue.errors.product.not_found"));
+    @ModelAttribute("act")
+    public Act getAct(@PathVariable("actId") long actId) {
+        return this.actService.findAct(actId)
+                .orElseThrow(() -> new NoSuchElementException("catalogue.errors.act.not_found"));
     }
 
     @GetMapping
-    public Product findProduct(@ModelAttribute("product") Product product) {
-        return product;
+    public Act findAct(@ModelAttribute("act") Act act) {
+        return act;
     }
 
     @PatchMapping
-    public ResponseEntity<?> updateProduct(@PathVariable("productId") int productId,
-                                           @Valid @RequestBody UpdateProductPayload payload,
+    public ResponseEntity<?> updateAct(@PathVariable("actId") long actId,
+                                           @Valid @RequestBody UpdateActPayload payload,
                                            BindingResult bindingResult) throws BindException {
         if (bindingResult.hasErrors()) {
             if (bindingResult instanceof BindException exception) {
@@ -47,15 +48,15 @@ public class ProductRestController {
                 throw new BindException(bindingResult);
             }
         } else {
-            this.productService.updateProduct(productId, payload.title(), payload.details());
+            this.actService.updateAct(actId, payload.month(), payload.year(), payload.section(), payload.price(), payload.actStatus());
             return ResponseEntity.noContent()
                     .build();
         }
     }
 
     @DeleteMapping
-    public ResponseEntity<Void> deleteProduct(@PathVariable("productId") int productId) {
-        this.productService.deleteProduct(productId);
+    public ResponseEntity<Void> deleteAct(@PathVariable("actId") long actId) {
+        this.actService.deleteAct(actId);
         return ResponseEntity.noContent()
                 .build();
     }
