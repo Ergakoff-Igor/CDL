@@ -10,7 +10,7 @@
 <div class="container">
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" data-th-href="@{/catalogue/acts/list}">К журналу актов</a>
+            <a class="navbar-brand" th:href="@{/catalogue/acts/list}">К журналу актов</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Переключатель навигации">
@@ -19,10 +19,10 @@
         </div>
     </nav>
     <h3 class="text-center">Создание акта</h3>
-    <div data-th-if="${errors}">
+    <div th:if="${errors}">
         <h2>Допущены ошибки</h2>
         <ul>
-            <li data-th-each="error: ${errors}" data-th-text="${error}"></li>
+            <li th:each="error: ${errors}" th:text="${error}"></li>
         </ul>
     </div>
     <form method="post" th:action="@{/catalogue/acts/create}">
