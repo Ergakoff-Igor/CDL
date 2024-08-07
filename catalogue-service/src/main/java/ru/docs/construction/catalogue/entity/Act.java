@@ -20,12 +20,4 @@ public class Act {
     private Double price;
 
     private ActStatus actStatus;
-    /**
-     * Метод конвертации статуса акта в string для шаблонизатора
-     *
-     * @return строковое значение статуса
-     */
-    public String actStatusToString() {
-        return this.actStatus.toString();
-    }
 }

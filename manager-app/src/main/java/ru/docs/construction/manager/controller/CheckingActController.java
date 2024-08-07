@@ -1,8 +1,7 @@
 package ru.docs.construction.manager.controller;
 
+import ru.docs.construction.manager.client.ActsRestClient;
 import ru.docs.construction.manager.entity.Act;
-import ru.docs.construction.manager.entity.ActStatus;
-import ru.docs.construction.manager.service.ActService;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.MessageSource;
@@ -18,13 +17,13 @@ import java.util.NoSuchElementException;
 @RequestMapping(("catalogue/acts/{actId:\\d+}/{status}"))
 @RequiredArgsConstructor
 public class CheckingActController {
-    private final ActService actService;
+    private final ActsRestClient actsRestClient;
 
     private final MessageSource messageSource;
 
     @ModelAttribute("act")
     public Act act(@PathVariable("actId") long actId) {
-        return this.actService.findAct(actId)
+        return this.actsRestClient.findAct(actId)
                 .orElseThrow(() -> new NoSuchElementException("catalogue.errors.act.not_found"));
     }
 
@@ -36,15 +35,7 @@ public class CheckingActController {
 
     @PostMapping("turnStatus")
     public String turnStatusToCorrection(@ModelAttribute("act") Act act, @ModelAttribute("status") String actStatus) {
-
-        switch (actStatus){
-            case "correction" -> actService.updateActStatus(act.getId(), ActStatus.CORRECTION);
-            case "checkingQC" -> actService.updateActStatus(act.getId(), ActStatus.CHECKING_QC);
-            case "checkingPtd" -> actService.updateActStatus(act.getId(), ActStatus.CHECKING_PTD);
-            case "checkingBD" -> actService.updateActStatus(act.getId(), ActStatus.CHECKING_BD);
-            case "accepted" -> actService.updateActStatus(act.getId(), ActStatus.ACCEPTED);
-            default -> throw new NoSuchElementException("catalogue.errors.act.not_found");
-        }
+        actsRestClient.updateActStatus(act.id(), actStatus);
         return "redirect:/catalogue/acts/list";
     }
 

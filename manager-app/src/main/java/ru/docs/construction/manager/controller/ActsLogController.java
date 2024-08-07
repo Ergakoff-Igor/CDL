@@ -1,14 +1,12 @@
 package ru.docs.construction.manager.controller;
 
-import org.springframework.validation.annotation.Validated;
+import ru.docs.construction.manager.client.ActsRestClient;
+import ru.docs.construction.manager.client.BadRequestException;
 import ru.docs.construction.manager.controller.payload.NewActPayload;
 import ru.docs.construction.manager.entity.Act;
-import ru.docs.construction.manager.service.ActService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
-import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,11 +16,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("catalogue/acts")
 public class ActsLogController {
 
-    private final ActService actService;
+    private final ActsRestClient actsRestClient;
 
     @GetMapping("list")
     public String getActsList(Model model) {
-        model.addAttribute("acts", this.actService.findAllActs());
+        model.addAttribute("acts", this.actsRestClient.findAllActs());
         return "catalogue/acts/index";
     }
 
@@ -33,18 +31,15 @@ public class ActsLogController {
     }
 
     @PostMapping("create")
-    public String createAct(@Validated NewActPayload payload,
-                                BindingResult bindingResult,
+    public String createAct(NewActPayload payload,
                                 Model model) {
-        if (bindingResult.hasErrors()) {
+        try {
+            Act act = this.actsRestClient.createAct(payload.month(), payload.year(), payload.section(), payload.price());
+            return "redirect:/catalogue/acts/%d".formatted(act.id());
+        } catch (BadRequestException exception) {
             model.addAttribute("payload", payload);
-            model.addAttribute("errors", bindingResult.getAllErrors().stream()
-                    .map(ObjectError::getDefaultMessage)
-                    .toList());
+            model.addAttribute("errors", exception.getErrors());
             return "catalogue/acts/new_act";
-        } else {
-            Act act = this.actService.createAct(payload.month(), payload.year(), payload.section(), payload.price());
-            return "redirect:/catalogue/acts/%d".formatted(act.getId());
         }
     }
 }

@@ -1,28 +1,11 @@
 package ru.docs.construction.manager.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
 /**
  * Модель акта
  */
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-public class Act {
 
-    private Long id;
+public record Act (Long id, String month, Short year, String section, Double price, ActStatus actStatus){
 
-    private String month;
-
-    private Short year;
-
-    private String section;
-
-    private Double price;
-
-    private ActStatus actStatus;
     /**
      * Метод конвертации статуса акта в string для шаблонизатора
      *

@@ -4,27 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="508ca5a5-2a9f-40e3-8a06-75479503d0aa" name="Changes" comment="CDL. Rest. Start">
-      <change afterPath="$PROJECT_DIR$/catalogue-service/src/main/java/ru/docs/construction/catalogue/controller/CheckingActController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalogue-service/src/main/java/ru/docs/construction/catalogue/controller/payload/NewActPayload.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalogue-service/src/main/java/ru/docs/construction/catalogue/controller/payload/UpdateActPayload.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalogue-service/src/main/java/ru/docs/construction/catalogue/entity/ActStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalogue-service/src/main/java/ru/docs/construction/catalogue/exceptions/InvalidActStatusException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalogue-service/src/main/java/ru/docs/construction/catalogue/service/ActService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalogue-service/src/main/java/ru/docs/construction/catalogue/service/DefaultActService.java" afterDir="false" />
+    <list default="true" id="508ca5a5-2a9f-40e3-8a06-75479503d0aa" name="Changes" comment="CDL. Rest-Controller">
+      <change afterPath="$PROJECT_DIR$/manager-app/src/main/java/ru/docs/construction/manager/client/BadRequestException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manager-app/src/main/java/ru/docs/construction/manager/client/RestClientActsRestClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manager-app/src/main/java/ru/docs/construction/manager/config/ClientBeans.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manager-app/src/main/resources/application-standalone.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalogue-service/src/main/java/ru/docs/construction/catalogue/controller/ProductRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/catalogue-service/src/main/java/ru/docs/construction/catalogue/controller/ActRestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalogue-service/src/main/java/ru/docs/construction/catalogue/controller/ProductsRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/catalogue-service/src/main/java/ru/docs/construction/catalogue/controller/ActsRestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalogue-service/src/main/java/ru/docs/construction/catalogue/controller/payload/NewProductPayload.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalogue-service/src/main/java/ru/docs/construction/catalogue/controller/payload/UpdateProductPayload.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalogue-service/src/main/java/ru/docs/construction/catalogue/entity/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/catalogue-service/src/main/java/ru/docs/construction/catalogue/entity/Act.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalogue-service/src/main/java/ru/docs/construction/catalogue/repository/InMemoryProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/catalogue-service/src/main/java/ru/docs/construction/catalogue/repository/InMemoryActRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalogue-service/src/main/java/ru/docs/construction/catalogue/repository/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/catalogue-service/src/main/java/ru/docs/construction/catalogue/repository/ActRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalogue-service/src/main/java/ru/docs/construction/catalogue/service/DefaultProductService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalogue-service/src/main/java/ru/docs/construction/catalogue/service/ProductService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalogue-service/src/main/resources/messages.properties" beforeDir="false" afterPath="$PROJECT_DIR$/catalogue-service/src/main/resources/messages.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalogue-service/src/main/java/ru/docs/construction/catalogue/entity/Act.java" beforeDir="false" afterPath="$PROJECT_DIR$/catalogue-service/src/main/java/ru/docs/construction/catalogue/entity/Act.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalogue-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/catalogue-service/src/main/resources/application-standalone.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manager-app/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/manager-app/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/manager-app/src/main/java/ru/docs/construction/manager/controller/ActController.java" beforeDir="false" afterPath="$PROJECT_DIR$/manager-app/src/main/java/ru/docs/construction/manager/controller/ActController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/manager-app/src/main/java/ru/docs/construction/manager/controller/ActsLogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/manager-app/src/main/java/ru/docs/construction/manager/controller/ActsLogController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manager-app/src/main/java/ru/docs/construction/manager/controller/CheckingActController.java" beforeDir="false" afterPath="$PROJECT_DIR$/manager-app/src/main/java/ru/docs/construction/manager/controller/CheckingActController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manager-app/src/main/java/ru/docs/construction/manager/controller/payload/UpdateActPayload.java" beforeDir="false" afterPath="$PROJECT_DIR$/manager-app/src/main/java/ru/docs/construction/manager/controller/payload/UpdateActPayload.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manager-app/src/main/java/ru/docs/construction/manager/entity/Act.java" beforeDir="false" afterPath="$PROJECT_DIR$/manager-app/src/main/java/ru/docs/construction/manager/entity/Act.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manager-app/src/main/java/ru/docs/construction/manager/entity/ActStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/manager-app/src/main/java/ru/docs/construction/manager/entity/ActStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manager-app/src/main/java/ru/docs/construction/manager/repository/ActRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/manager-app/src/main/java/ru/docs/construction/manager/repository/InMemoryActRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/manager-app/src/main/java/ru/docs/construction/manager/service/ActService.java" beforeDir="false" afterPath="$PROJECT_DIR$/manager-app/src/main/java/ru/docs/construction/manager/client/ActsRestClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manager-app/src/main/java/ru/docs/construction/manager/service/DefaultActService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/manager-app/src/main/resources/application.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/manager-app/src/main/resources/templates/catalogue/acts/act.html" beforeDir="false" afterPath="$PROJECT_DIR$/manager-app/src/main/resources/templates/catalogue/acts/act.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,40 +56,40 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.CatalogueServiceApplication.executor": "Run",
-    "Spring Boot.ManagerApplication.executor": "Run",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/IdeaProjects/CDL/catalogue-service/src/main/resources",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "File.Encoding",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.CatalogueServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ManagerApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/IdeaProjects/CDL/manager-app/src/main/java/ru/docs/construction/manager&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;File.Encoding&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\IdeaProjects\CDL\manager-app\src\main\java\ru\docs\construction\manager" />
       <recent name="D:\IdeaProjects\CDL\catalogue-service\src\main\resources" />
       <recent name="D:\IdeaProjects\CDL\catalogue-service\src\main\java\ru\docs\construction\catalogue\controller\payload" />
       <recent name="D:\IdeaProjects\CDL\catalogue-service\src\main\java\ru\docs\construction\catalogue\service" />
       <recent name="D:\IdeaProjects\CDL\catalogue-service\src\main\java\ru\docs\construction\catalogue\entity" />
-      <recent name="D:\IdeaProjects\CDL\catalogue-service\src\main\java\ru\docs\construction\service" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="ru.docs.construction.catalogue.controller" />
@@ -103,8 +103,24 @@
       </set>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Spring Boot.CatalogueServiceApplication">
+    <configuration name="CatalogueServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <option name="ACTIVE_PROFILES" value="standalone" />
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="catalogue-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="ru.docs.construction.catalogue.CatalogueServiceApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.docs.construction.catalogue.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ManagerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <option name="ACTIVE_PROFILES" value="standalone" />
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="manager-app" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="ru.docs.construction.manager.ManagerApplication" />
@@ -121,6 +137,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.ManagerApplication" />
+        <item itemvalue="Spring Boot.CatalogueServiceApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -154,7 +171,10 @@
       <workItem from="1721236007277" duration="6561000" />
       <workItem from="1721320035319" duration="1092000" />
       <workItem from="1721328667174" duration="39000" />
-      <workItem from="1721927276042" duration="11244000" />
+      <workItem from="1721927276042" duration="11474000" />
+      <workItem from="1722879005961" duration="10769000" />
+      <workItem from="1723050863989" duration="653000" />
+      <workItem from="1723051536947" duration="1784000" />
     </task>
     <task id="LOCAL-00001" summary="CDL. MVP">
       <option name="closed" value="true" />
@@ -180,7 +200,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721929658198</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="CDL. Rest-Controller">
+      <option name="closed" value="true" />
+      <created>1721938726146</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1721938726146</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -202,7 +230,8 @@
     <MESSAGE value="CDL. MVP" />
     <MESSAGE value="CDL. Add validation" />
     <MESSAGE value="CDL. Rest. Start" />
-    <option name="LAST_COMMIT_MESSAGE" value="CDL. Rest. Start" />
+    <MESSAGE value="CDL. Rest-Controller" />
+    <option name="LAST_COMMIT_MESSAGE" value="CDL. Rest-Controller" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
