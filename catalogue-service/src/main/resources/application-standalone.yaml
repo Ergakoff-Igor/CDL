@@ -1,2 +1,16 @@
 server:
   port: 8081
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/acts_log
+    username: root
+    password: 55555
+  flyway:
+    schemas:
+      - public
+      - acts_log
+  jpa:
+    show-sql: true
+logging:
+  level:
+    sql: info

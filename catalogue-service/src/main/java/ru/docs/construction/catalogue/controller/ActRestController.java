@@ -15,6 +15,7 @@ import ru.docs.construction.catalogue.service.ActService;
 
 import java.util.Locale;
 import java.util.NoSuchElementException;
+import java.util.Objects;
 
 
 @RestController
@@ -39,8 +40,8 @@ public class ActRestController {
 
     @PatchMapping
     public ResponseEntity<?> updateAct(@PathVariable("actId") long actId,
-                                           @Valid @RequestBody UpdateActPayload payload,
-                                           BindingResult bindingResult) throws BindException {
+                                       @Valid @RequestBody UpdateActPayload payload,
+                                       BindingResult bindingResult) throws BindException {
         if (bindingResult.hasErrors()) {
             if (bindingResult instanceof BindException exception) {
                 throw exception;
@@ -66,7 +67,7 @@ public class ActRestController {
                                                                       Locale locale) {
         return ResponseEntity.status(HttpStatus.NOT_FOUND)
                 .body(ProblemDetail.forStatusAndDetail(HttpStatus.NOT_FOUND,
-                        this.messageSource.getMessage(exception.getMessage(), new Object[0],
-                                exception.getMessage(), locale)));
+                        Objects.requireNonNull(this.messageSource.getMessage(exception.getMessage(), new Object[0],
+                                exception.getMessage(), locale))));
     }
 }

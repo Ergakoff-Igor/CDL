@@ -1,4 +1,4 @@
-actslog:
+acts-log:
   services:
     catalogue:
       uri: http://localhost:8081

@@ -25,7 +25,7 @@
 
         <nav class="navbar navbar-expand-lg bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Журнал учета актов</a>
+                <a class="navbar-brand" th:href="@{/catalogue/acts/list}">Журнал учета актов</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Переключатель навигации">
@@ -38,8 +38,11 @@
                                 акт</a>
                         </li>
                     </ul>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Поиск" aria-label="Поиск">
+                    <form method="get" th:action="@{/catalogue/acts/list}" class="d-flex" role="search">
+                        <label>
+                            <input class="form-control me-2" type="search" name="filter" th:value="${filter}"
+                                   placeholder="Поиск" aria-label="Поиск">
+                        </label>
                         <button class="btn btn-outline-success" type="submit">Поиск</button>
                     </form>
                 </div>

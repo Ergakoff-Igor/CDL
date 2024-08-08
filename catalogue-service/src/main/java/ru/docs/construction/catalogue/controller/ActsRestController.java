@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 import ru.docs.construction.catalogue.service.ActService;
 
-import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -22,14 +21,14 @@ public class ActsRestController {
     private final ActService actService;
 
     @GetMapping
-    public List<Act> findActs() {
-        return this.actService.findAllActs();
+    public Iterable<Act> findActs(@RequestParam(name = "filter", required = false) String filter) {
+        return this.actService.findAllActs(filter);
     }
 
     @PostMapping
     public ResponseEntity<?> createAct(@Valid @RequestBody NewActPayload payload,
-                                           BindingResult bindingResult,
-                                           UriComponentsBuilder uriComponentsBuilder)
+                                       BindingResult bindingResult,
+                                       UriComponentsBuilder uriComponentsBuilder)
             throws BindException {
         if (bindingResult.hasErrors()) {
             if (bindingResult instanceof BindException exception) {

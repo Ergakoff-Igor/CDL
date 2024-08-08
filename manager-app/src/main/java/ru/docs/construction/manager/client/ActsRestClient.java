@@ -8,7 +8,7 @@ import java.util.Optional;
 
 public interface ActsRestClient {
 
-    List<Act> findAllActs();
+    List<Act> findAllActs(String filter);
 
     Act createAct(String month, Short year, String section, Double price);
 

@@ -1,17 +1,9 @@
 package ru.docs.construction.catalogue.repository;
 
+import org.springframework.data.repository.CrudRepository;
 import ru.docs.construction.catalogue.entity.Act;
 
-import java.util.List;
-import java.util.Optional;
+public interface ActRepository extends CrudRepository<Act, Long> {
 
-public interface ActRepository {
-
-    List<Act> findAll();
-
-    Act save(Act act);
-
-    Optional<Act> findById(Long atId);
-
-    void deleteById(Long id);
+    Iterable<Act> findAllBySectionLikeIgnoreCase(String name);
 }

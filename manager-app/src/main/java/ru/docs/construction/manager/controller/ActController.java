@@ -43,8 +43,8 @@ public class ActController {
 
     @PostMapping("edit")
     public String updateAct(@ModelAttribute(name = "act") Act act,
-                                UpdateActPayload payload,
-                                Model model) {
+                            UpdateActPayload payload,
+                            Model model) {
         try {
             this.actsRestClient.updateAct(act.id(), payload.month(), payload.year(), payload.section(), payload.price(), act.actStatus());
             return "redirect:/catalogue/acts/%d".formatted(act.id());

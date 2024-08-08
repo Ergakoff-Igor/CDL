@@ -11,7 +11,7 @@ public class ClientBeans {
 
     @Bean
     public RestClientActsRestClient actsRestClient(
-            @Value("${actslog.service.catalogue.uri:http://localhost:8081}") String catalogueBaseUri) {
+            @Value("${acts-log.service.catalogue.uri:http://localhost:8081}") String catalogueBaseUri) {
         return new RestClientActsRestClient(RestClient.builder()
                 .baseUrl(catalogueBaseUri)
                 .build());

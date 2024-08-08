@@ -36,10 +36,11 @@
         <div class="card-body">
             <ul>
                 <li><strong>ID</strong>: <span th:text="${act.id}"></span></li>
-                <li><strong>Период</strong>: <span th:text="${act.month}"></span> <span th:text="${act.year}"></span></li>
+                <li><strong>Период</strong>: <span th:text="${act.month}"></span> <span th:text="${act.year}"></span>
+                </li>
                 <li><strong>Раздел проекта</strong>: <span th:text="${act.section}"></span></li>
                 <li><strong>Стоимость</strong>: <span th:text="${act.price}"></span> &#8381</li>
-                <li> <strong>Статус</strong>:
+                <li><strong>Статус</strong>:
                     <span th:if="${act.actStatusToString() == 'CORRECTION'}">На устранении замечаний</span>
                     <span th:if="${act.actStatusToString() == 'CHECKING_QC'}">На проверке СК</span>
                     <span th:if="${act.actStatusToString() == 'CHECKING_PTD'}">На проверке ПТО</span>

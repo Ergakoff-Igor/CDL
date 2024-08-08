@@ -32,14 +32,11 @@ public class CheckingActController {
         return actStatus;
     }
 
-
     @PostMapping("turnStatus")
     public String turnStatusToCorrection(@ModelAttribute("act") Act act, @ModelAttribute("status") String actStatus) {
         actsRestClient.updateActStatus(act.id(), actStatus);
         return "redirect:/catalogue/acts/list";
     }
-
-
 
     @ExceptionHandler(NoSuchElementException.class)
     public String handleNoSuchElementException(NoSuchElementException exception, Model model,

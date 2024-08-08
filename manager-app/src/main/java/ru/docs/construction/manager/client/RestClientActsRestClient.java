@@ -25,10 +25,10 @@ public class RestClientActsRestClient implements ActsRestClient {
     private final RestClient restClient;
 
     @Override
-    public List<Act> findAllActs() {
+    public List<Act> findAllActs(String filter) {
         return this.restClient
                 .get()
-                .uri("/catalogue-api/acts")
+                .uri("/catalogue-api/acts?filter={filter}", filter)
                 .retrieve()
                 .body(ACTS_TYPE_REFERENCE);
     }
@@ -102,6 +102,4 @@ public class RestClientActsRestClient implements ActsRestClient {
             throw new NoSuchElementException(exception);
         }
     }
-
-
 }
