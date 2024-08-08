@@ -5,7 +5,6 @@ package ru.docs.construction.manager.entity;
  */
 
 public record Act(Long id, String month, Short year, String section, Double price, ActStatus actStatus) {
-
     /**
      * Метод конвертации статуса акта в string для шаблонизатора
      *
