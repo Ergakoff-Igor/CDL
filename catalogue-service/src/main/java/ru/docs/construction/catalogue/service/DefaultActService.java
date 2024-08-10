@@ -21,7 +21,7 @@ public class DefaultActService implements ActService {
         if (filter != null && !filter.isBlank()) {
             return this.actRepository.findAllBySectionLikeIgnoreCase("%" + filter + "%");
         } else {
-            return this.actRepository.findAll();
+            return this.actRepository.findAllOrderById();
         }
     }
 
