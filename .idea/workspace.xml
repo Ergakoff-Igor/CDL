@@ -5,9 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="508ca5a5-2a9f-40e3-8a06-75479503d0aa" name="Changes" comment="CDL. JPA">
+      <change afterPath="$PROJECT_DIR$/.idea/diff-generator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jpb-settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/catalogue-service/src/main/java/ru/docs/construction/catalogue/repository/ActRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/catalogue-service/src/main/java/ru/docs/construction/catalogue/repository/ActRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/catalogue-service/src/main/java/ru/docs/construction/catalogue/service/DefaultActService.java" beforeDir="false" afterPath="$PROJECT_DIR$/catalogue-service/src/main/java/ru/docs/construction/catalogue/service/DefaultActService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalogue-service/src/main/resources/application-standalone.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/catalogue-service/src/main/resources/application-standalone.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalogue-service/src/main/resources/db.migration/V24_1_1__Basic_schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/catalogue-service/src/main/resources/db.migration/V24_1_1__Basic_schema.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manager-app/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/manager-app/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manager-app/src/main/resources/application-standalone.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/manager-app/src/main/resources/application-standalone.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,12 +27,25 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="com.intellij.jpb.FlywayMigrationScript" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Ergakoff-Igor&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Ergakoff-Igor/CDL.git&quot;,
+    &quot;accountId&quot;: &quot;21dda77e-6322-41d2-aba6-36936670e3b0&quot;
+  }
+}</component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
@@ -53,7 +75,7 @@
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/IdeaProjects/CDL/catalogue-service/src/main/resources&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Ierga/IdeaProjects/CDL&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -62,7 +84,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;File.Encoding&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -76,11 +98,14 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Ierga\IdeaProjects\CDL" />
+      <recent name="C:\Users\Ierga\IdeaProjects\CDL\catalogue-service\src\main\resources\db.migration" />
       <recent name="D:\IdeaProjects\CDL\catalogue-service\src\main\resources" />
       <recent name="D:\IdeaProjects\CDL\manager-app\src\main\java\ru\docs\construction\manager" />
       <recent name="D:\IdeaProjects\CDL\catalogue-service\src\main\java\ru\docs\construction\catalogue\controller\payload" />
-      <recent name="D:\IdeaProjects\CDL\catalogue-service\src\main\java\ru\docs\construction\catalogue\service" />
-      <recent name="D:\IdeaProjects\CDL\catalogue-service\src\main\java\ru\docs\construction\catalogue\entity" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Ierga\IdeaProjects\CDL" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="ru.docs.construction.catalogue.controller" />
@@ -95,7 +120,7 @@
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.CatalogueServiceApplication">
-    <configuration name="CatalogueServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+    <configuration name="CatalogueServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="ACTIVE_PROFILES" value="standalone" />
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="catalogue-service" />
@@ -128,15 +153,14 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.ManagerApplication" />
-        <item itemvalue="Spring Boot.CatalogueServiceApplication" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.15989.150" />
-        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-IU-241.15989.150" />
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23339.11" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23339.11" />
       </set>
     </attachedChunks>
   </component>
@@ -168,7 +192,17 @@
       <workItem from="1723051536947" duration="3590000" />
       <workItem from="1723136246293" duration="7220000" />
       <workItem from="1723145201610" duration="4756000" />
-      <workItem from="1723271335109" duration="3360000" />
+      <workItem from="1723271335109" duration="4717000" />
+      <workItem from="1725382029481" duration="683000" />
+      <workItem from="1725389257492" duration="2742000" />
+      <workItem from="1727725446634" duration="176000" />
+      <workItem from="1727802474625" duration="5684000" />
+      <workItem from="1727814679771" duration="1351000" />
+      <workItem from="1727888505669" duration="5724000" />
+      <workItem from="1727894287346" duration="2708000" />
+      <workItem from="1728321048901" duration="6017000" />
+      <workItem from="1728410080253" duration="1000" />
+      <workItem from="1728496342445" duration="393000" />
     </task>
     <task id="LOCAL-00001" summary="CDL. MVP">
       <option name="closed" value="true" />
@@ -226,7 +260,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723149892804</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="CDL. JPA">
+      <option name="closed" value="true" />
+      <created>1723279444520</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1723279444520</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -1,5 +1,3 @@
-server:
-  port: 8081
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/acts_log
@@ -11,6 +9,8 @@ spring:
       - acts_log
   jpa:
     show-sql: true
+server:
+  port: 8081
 logging:
   level:
     sql: info

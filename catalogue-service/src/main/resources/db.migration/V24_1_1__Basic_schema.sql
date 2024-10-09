@@ -1,6 +1,6 @@
 create schema if not exists acts_log;
 
-create table if not exists acts_log.t_act
+create table acts_log.t_act
 (
     id           serial primary key,
     c_month      varchar(8)  not null,

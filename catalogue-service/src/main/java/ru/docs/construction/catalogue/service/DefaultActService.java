@@ -19,7 +19,7 @@ public class DefaultActService implements ActService {
     @Override
     public Iterable<Act> findAllActs(String filter) {
         if (filter != null && !filter.isBlank()) {
-            return this.actRepository.findAllBySectionLikeIgnoreCase("%" + filter + "%");
+            return this.actRepository.findAllBySectionLikeIgnoreCaseOrderById("%" + filter + "%");
         } else {
             return this.actRepository.findAllOrderById();
         }
