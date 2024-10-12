@@ -9,6 +9,11 @@ spring:
       - acts_log
   jpa:
     show-sql: true
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8082/realms/actslog
 server:
   port: 8081
 logging:
