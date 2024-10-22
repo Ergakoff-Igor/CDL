@@ -1,5 +1,8 @@
 package ru.docs.construction.manager.controller;
 
+import org.slf4j.LoggerFactory;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.oauth2.core.oidc.user.OidcUser;
 import ru.docs.construction.manager.client.ActsRestClient;
 import ru.docs.construction.manager.client.BadRequestException;
 import ru.docs.construction.manager.controller.payload.UpdateActPayload;
@@ -12,8 +15,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Locale;
-import java.util.NoSuchElementException;
+import java.util.*;
 
 
 @Controller
@@ -25,6 +27,7 @@ public class ActController {
 
     private final MessageSource messageSource;
 
+
     @ModelAttribute("act")
     public Act act(@PathVariable("actId") long actId) {
         return this.actsRestClient.findAct(actId)
@@ -32,7 +35,14 @@ public class ActController {
     }
 
     @GetMapping
-    public String getAct() {
+    public String getAct(@AuthenticationPrincipal OidcUser  oidcUser, Model model) {
+
+        List<String> authorities = Optional.ofNullable(oidcUser.getClaimAsStringList("groups"))
+                                        .orElseGet(List::of)
+                                        .stream()
+                                        .filter(role -> role.startsWith("ROLE_")).toList();
+        LoggerFactory.getLogger(ActController.class).info("Principal {}", authorities);
+        model.addAttribute("authorities", authorities);
         return "catalogue/acts/act";
     }
 

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
-      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -16,14 +15,20 @@
             integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
             crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/css/style.css">
-    <title> Акт </title>
-    <!--    [[${act.month}]] &ndash; [[${act.section}]]-->
+    <title> Акт: &laquo;[[${act.month}]] &ndash; [[${act.section}]]&raquo;</title>
 </head>
 <body>
 <div class="container">
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" th:href="@{/catalogue/acts/list}">К журналу актов</a>
+
+            <a class="navbar-brand" th:href="@{/catalogue/acts/list}">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                     class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                          d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
+                </svg>
+                К журналу актов</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Переключатель навигации">
@@ -32,7 +37,7 @@
         </div>
     </nav>
 
-    <div class="card" style="width: 18rem;">
+    <div class="card" style="width: 20rem;">
         <div class="card-body">
             <ul>
                 <li><strong>ID</strong>: <span th:text="${act.id}"></span></li>
@@ -64,8 +69,8 @@
                   th:action="@{/catalogue/acts/{actId}/{actStatus}/turnStatus(actId=${act.id}, actStatus='accepted')}">
             </form>
 
-            <div class="btn-group" role="group">
-                <div th:if="${act.actStatusToString() == 'CORRECTION'}">
+            <div th:each="role : ${authorities}" th:if="${role=='ROLE_CONTRACTOR' or role=='ROLE_ADMIN'}">
+                <div class="btn-group" role="group" th:if="${act.actStatusToString() == 'CORRECTION'}">
                     <div class="btn-group" role="group"
                          aria-label="Группа кнопок с вложенным раскрывающимся списком">
                         <div class="btn-group" role="group">
@@ -89,9 +94,19 @@
                             </ul>
                         </div>
                     </div>
+                    <form class="text-center" th:method="GET"
+                          th:action="@{/catalogue/acts/{actId}/edit(actId=${act.id})}">
+                        <button class="btn btn-outline-secondary btn-sm">Изменить</button>
+                    </form>
+                    <form class="text-center" th:method="POST"
+                          th:action="@{/catalogue/acts/{actId}/delete(actId=${act.id})}">
+                        <button class="btn btn-outline-danger btn-sm">Удалить</button>
+                    </form>
                 </div>
+            </div>
 
-                <div th:if="${act.actStatusToString() == 'CHECKING_QC'}">
+            <div th:each="role : ${authorities}" th:if="${role=='ROLE_QC' or role=='ROLE_ADMIN'}">
+                <div class="btn-group" role="group" th:if="${act.actStatusToString() == 'CHECKING_QC'}">
                     <div class="btn-group" role="group"
                          aria-label="Группа кнопок с вложенным раскрывающимся списком">
                         <div class="btn-group" role="group">
@@ -111,9 +126,20 @@
                             </ul>
                         </div>
                     </div>
-                </div>
 
-                <div th:if="${act.actStatusToString() == 'CHECKING_PTD'}">
+                    <form class="text-center" th:method="GET"
+                          th:action="@{/catalogue/acts/{actId}/edit(actId=${act.id})}">
+                        <button class="btn btn-outline-secondary btn-sm">Изменить</button>
+                    </form>
+                    <form class="text-center" th:method="POST"
+                          th:action="@{/catalogue/acts/{actId}/delete(actId=${act.id})}">
+                        <button class="btn btn-outline-danger btn-sm">Удалить</button>
+                    </form>
+                </div>
+            </div>
+
+            <div th:each="role : ${authorities}" th:if="${role=='ROLE_PTD' or role=='ROLE_ADMIN'}">
+                <div class="btn-group" role="group" th:if="${act.actStatusToString() == 'CHECKING_PTD'}">
                     <div class="btn-group" role="group"
                          aria-label="Группа кнопок с вложенным раскрывающимся списком">
                         <div class="btn-group" role="group">
@@ -133,9 +159,20 @@
                             </ul>
                         </div>
                     </div>
-                </div>
 
-                <div th:if="${act.actStatusToString() == 'CHECKING_BD'}">
+                    <form class="text-center" th:method="GET"
+                          th:action="@{/catalogue/acts/{actId}/edit(actId=${act.id})}">
+                        <button class="btn btn-outline-secondary btn-sm">Изменить</button>
+                    </form>
+                    <form class="text-center" th:method="POST"
+                          th:action="@{/catalogue/acts/{actId}/delete(actId=${act.id})}">
+                        <button class="btn btn-outline-danger btn-sm">Удалить</button>
+                    </form>
+                </div>
+            </div>
+
+            <div th:each="role : ${authorities}" th:if="${role=='ROLE_BCD' or role=='ROLE_ADMIN'}">
+                <div class="btn-group" role="group" th:if="${act.actStatusToString() == 'CHECKING_BD'}">
                     <div class="btn-group" role="group"
                          aria-label="Группа кнопок с вложенным раскрывающимся списком">
                         <div class="btn-group" role="group">
@@ -155,16 +192,32 @@
                             </ul>
                         </div>
                     </div>
+                    <form class="text-center" th:method="GET"
+                          th:action="@{/catalogue/acts/{actId}/edit(actId=${act.id})}">
+                        <button class="btn btn-outline-secondary btn-sm">Изменить</button>
+                    </form>
+                    <form class="text-center" th:method="POST"
+                          th:action="@{/catalogue/acts/{actId}/delete(actId=${act.id})}">
+                        <button class="btn btn-outline-danger btn-sm">Удалить</button>
+                    </form>
                 </div>
+            </div>
 
-                <form class="text-center" th:method="GET"
-                      th:action="@{/catalogue/acts/{actId}/edit(actId=${act.id})}">
-                    <button class="btn btn-outline-secondary btn-sm">Изменить</button>
-                </form>
-                <form class="text-center" th:method="POST"
-                      th:action="@{/catalogue/acts/{actId}/delete(actId=${act.id})}">
-                    <button class="btn btn-outline-danger btn-sm">Удалить</button>
-                </form>
+            <div th:each="role : ${authorities}" th:if="${role=='ROLE_ADMIN'}">
+                <div class="btn-group" role="group" th:if="${act.actStatusToString() == 'ACCEPTED'}">
+                    <form class="text-center" th:method="POST"
+                          th:action="@{/catalogue/acts/{actId}/{actStatus}/turnStatus(actId=${act.id}, actStatus='correction')}">
+                        <button class="btn btn-outline-danger btn-sm" aria-current="page">Не согласовано</button>
+                    </form>
+                    <form class="text-center" th:method="GET"
+                          th:action="@{/catalogue/acts/{actId}/edit(actId=${act.id})}">
+                        <button class="btn btn-outline-secondary btn-sm">Изменить</button>
+                    </form>
+                    <form class="text-center" th:method="POST"
+                          th:action="@{/catalogue/acts/{actId}/delete(actId=${act.id})}">
+                        <button class="btn btn-outline-danger btn-sm">Удалить</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>

@@ -1,6 +1,5 @@
 <!doctype html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
-      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -45,6 +44,7 @@
                         </label>
                         <button class="btn btn-outline-success" type="submit">Поиск</button>
                     </form>
+                    <a href="/logout"><button type="button" class="btn btn-outline-danger">Выйти</button></a>
                 </div>
             </div>
         </nav>
@@ -159,13 +159,10 @@
                                     Стоимость: <span th:text="${act.price}"></span> &#8381
                                     <br>
                                 </p>
-                                <div style="min-height: 20px;">
-                                    <div class="collapse collapse-horizontal" id="collapseWidthExample">
-                                        <div class="card card-body" style="width: 100px;">
-                                            В архиве
-                                        </div>
-                                    </div>
-                                </div>
+                                <form class="text-center" th:method="GET"
+                                      th:action="@{/catalogue/acts/{actId}(actId=${act.id})}">
+                                    <button class="btn btn-outline-danger btn-sm">Детали</button>
+                                </form>
                             </div>
                         </div>
                     </div>
