@@ -101,7 +101,7 @@ class ActRestControllerTest {
     }
 
     @Test
-    void updateProduct_RequestIsInvalidAndBindResultIsBindException_ReturnsBadRequest() {
+    void updateAct_RequestIsInvalidAndBindResultIsBindException_ReturnsBadRequest() {
         // given
         var payload = new UpdateActPayload(" ", null, " ", 2000d, ActStatus.CHECKING_QC);
         var bindingResult = new BindException(new MapBindingResult(Map.of(), "payload"));
