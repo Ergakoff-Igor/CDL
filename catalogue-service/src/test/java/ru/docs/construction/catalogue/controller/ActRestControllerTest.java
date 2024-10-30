@@ -3,6 +3,7 @@ package ru.docs.construction.catalogue.controller;
 import ru.docs.construction.catalogue.controller.payload.UpdateActPayload;
 import ru.docs.construction.catalogue.entity.Act;
 import ru.docs.construction.catalogue.entity.ActStatus;
+import ru.docs.construction.catalogue.exceptions.InvalidActStatusException;
 import ru.docs.construction.catalogue.service.ActService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -116,6 +117,101 @@ class ActRestControllerTest {
     }
 
     @Test
+    void turnStatusToCorrection_RequestUpdateActStatusToCorrection_ReturnsNoContent() {
+        // given
+        long actId = 1L;
+        String actStatus = "correction";
+
+        // when
+        var result = this.controller.turnStatusToCorrection(actId, actStatus);
+
+        // then
+        assertNotNull(result);
+        assertEquals(HttpStatus.NO_CONTENT, result.getStatusCode());
+
+        verify(this.actService).updateActStatus(1L, ActStatus.CORRECTION);
+    }
+
+    @Test
+    void turnStatusToCorrection_RequestUpdateActStatusToCheckingQc_ReturnsNoContent() {
+        // given
+        long actId = 1L;
+        String actStatus = "checkingQC";
+
+        // when
+        var result = this.controller.turnStatusToCorrection(actId, actStatus);
+
+        // then
+        assertNotNull(result);
+        assertEquals(HttpStatus.NO_CONTENT, result.getStatusCode());
+
+        verify(this.actService).updateActStatus(1L, ActStatus.CHECKING_QC);
+    }
+
+    @Test
+    void turnStatusToCorrection_RequestUpdateActStatusToCheckingPtd_ReturnsNoContent() {
+        // given
+        long actId = 1L;
+        String actStatus = "checkingPtd";
+
+        // when
+        var result = this.controller.turnStatusToCorrection(actId, actStatus);
+
+        // then
+        assertNotNull(result);
+        assertEquals(HttpStatus.NO_CONTENT, result.getStatusCode());
+
+        verify(this.actService).updateActStatus(1L, ActStatus.CHECKING_PTD);
+    }
+
+    @Test
+    void turnStatusToCorrection_RequestUpdateActStatusToCheckingBdc_ReturnsNoContent() {
+        // given
+        long actId = 1L;
+        String actStatus = "checkingBD";
+
+        // when
+        var result = this.controller.turnStatusToCorrection(actId, actStatus);
+
+        // then
+        assertNotNull(result);
+        assertEquals(HttpStatus.NO_CONTENT, result.getStatusCode());
+
+        verify(this.actService).updateActStatus(1L, ActStatus.CHECKING_BD);
+    }
+
+    @Test
+    void turnStatusToCorrection_RequestUpdateActStatusToAccepted_ReturnsNoContent() {
+        // given
+        long actId = 1L;
+        String actStatus = "accepted";
+
+        // when
+        var result = this.controller.turnStatusToCorrection(actId, actStatus);
+
+        // then
+        assertNotNull(result);
+        assertEquals(HttpStatus.NO_CONTENT, result.getStatusCode());
+
+        verify(this.actService).updateActStatus(1L, ActStatus.ACCEPTED);
+    }
+
+    @Test
+    void turnStatusToCorrection_RequestUpdateInvalidActStatus_ThrowsInvalidActStatusException() {
+        // given
+        long actId = 1L;
+        String actStatus = "invalid";
+
+        // when
+        var exception = assertThrows(InvalidActStatusException.class, () -> this.controller.turnStatusToCorrection(actId, actStatus));
+
+        // then
+        assertEquals("catalogue.errors.act.bad_request", exception.getMessage());
+        verifyNoInteractions(this.actService);
+    }
+
+
+    @Test
     void deleteAct_ReturnsNoContent() {
         // given
 
@@ -146,6 +242,28 @@ class ActRestControllerTest {
         assertEquals(HttpStatus.NOT_FOUND, result.getStatusCode());
         assertInstanceOf(ProblemDetail.class, result.getBody());
         assertEquals(HttpStatus.NOT_FOUND.value(), result.getBody().getStatus());
+        assertEquals("error details", result.getBody().getDetail());
+
+        verifyNoInteractions(this.actService);
+    }
+
+    @Test
+    void handleInvalidActStatusException_ReturnsBadRequest() {
+        // given
+        var exception = new InvalidActStatusException("error_code");
+        var locale = new Locale("ru");
+
+        doReturn("error details").when(this.messageSource)
+                .getMessage("error_code", new Object[0], "error_code", locale);
+
+        // when
+        var result = this.controller.handleRuntimeException(exception, locale);
+
+        // then
+        assertNotNull(result);
+        assertEquals(HttpStatus.BAD_REQUEST, result.getStatusCode());
+        assertInstanceOf(ProblemDetail.class, result.getBody());
+        assertEquals(HttpStatus.BAD_REQUEST.value(), result.getBody().getStatus());
         assertEquals("error details", result.getBody().getDetail());
 
         verifyNoInteractions(this.actService);

@@ -11,6 +11,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindException;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import ru.docs.construction.catalogue.entity.ActStatus;
+import ru.docs.construction.catalogue.exceptions.InvalidActStatusException;
 import ru.docs.construction.catalogue.service.ActService;
 
 import java.util.Locale;
@@ -55,6 +57,22 @@ public class ActRestController {
         }
     }
 
+    @PatchMapping("/{status}")
+    public ResponseEntity<?> turnStatusToCorrection(@PathVariable("actId") long actId, @PathVariable("status") String actStatus) {
+
+        switch (actStatus) {
+            case "correction" -> this.actService.updateActStatus(actId, ActStatus.CORRECTION);
+            case "checkingQC" -> this.actService.updateActStatus(actId, ActStatus.CHECKING_QC);
+            case "checkingPtd" -> this.actService.updateActStatus(actId, ActStatus.CHECKING_PTD);
+            case "checkingBD" -> this.actService.updateActStatus(actId, ActStatus.CHECKING_BD);
+            case "accepted" -> this.actService.updateActStatus(actId, ActStatus.ACCEPTED);
+            default -> throw new InvalidActStatusException("catalogue.errors.act.bad_request");
+        }
+
+        return ResponseEntity.noContent()
+                .build();
+    }
+
     @DeleteMapping
     public ResponseEntity<Void> deleteAct(@PathVariable("actId") long actId) {
         this.actService.deleteAct(actId);
@@ -67,6 +85,15 @@ public class ActRestController {
                                                                       Locale locale) {
         return ResponseEntity.status(HttpStatus.NOT_FOUND)
                 .body(ProblemDetail.forStatusAndDetail(HttpStatus.NOT_FOUND,
+                        Objects.requireNonNull(this.messageSource.getMessage(exception.getMessage(), new Object[0],
+                                exception.getMessage(), locale))));
+    }
+
+    @ExceptionHandler(InvalidActStatusException.class)
+    public ResponseEntity<ProblemDetail> handleRuntimeException(InvalidActStatusException exception,
+                                                                Locale locale) {
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                .body(ProblemDetail.forStatusAndDetail(HttpStatus.BAD_REQUEST,
                         Objects.requireNonNull(this.messageSource.getMessage(exception.getMessage(), new Object[0],
                                 exception.getMessage(), locale))));
     }
