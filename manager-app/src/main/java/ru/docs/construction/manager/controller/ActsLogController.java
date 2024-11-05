@@ -1,5 +1,7 @@
 package ru.docs.construction.manager.controller;
 
+import jakarta.servlet.http.HttpServletResponse;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.RequestParam;
 import ru.docs.construction.manager.client.ActsRestClient;
 import ru.docs.construction.manager.client.BadRequestException;
@@ -34,11 +36,13 @@ public class ActsLogController {
 
     @PostMapping("create")
     public String createAct(NewActPayload payload,
-                            Model model) {
+                            Model model,
+                            HttpServletResponse response) {
         try {
             Act act = this.actsRestClient.createAct(payload.month(), payload.year(), payload.section(), payload.price());
             return "redirect:/catalogue/acts/%d".formatted(act.id());
         } catch (BadRequestException exception) {
+            response.setStatus(HttpStatus.BAD_REQUEST.value());
             model.addAttribute("payload", payload);
             model.addAttribute("errors", exception.getErrors());
             return "catalogue/acts/new_act";
