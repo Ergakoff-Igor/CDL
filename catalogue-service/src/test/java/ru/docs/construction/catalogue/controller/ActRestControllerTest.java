@@ -117,13 +117,13 @@ class ActRestControllerTest {
     }
 
     @Test
-    void turnStatusToCorrection_RequestUpdateActStatusToCorrection_ReturnsNoContent() {
+    void turnActStatus_RequestUpdateActStatusToCorrection_ReturnsNoContent() {
         // given
         long actId = 1L;
         String actStatus = "correction";
 
         // when
-        var result = this.controller.turnStatusToCorrection(actId, actStatus);
+        var result = this.controller.turnActStatus(actId, actStatus);
 
         // then
         assertNotNull(result);
@@ -133,13 +133,13 @@ class ActRestControllerTest {
     }
 
     @Test
-    void turnStatusToCorrection_RequestUpdateActStatusToCheckingQc_ReturnsNoContent() {
+    void turnActStatus_RequestUpdateActStatusToCheckingQc_ReturnsNoContent() {
         // given
         long actId = 1L;
         String actStatus = "checkingQC";
 
         // when
-        var result = this.controller.turnStatusToCorrection(actId, actStatus);
+        var result = this.controller.turnActStatus(actId, actStatus);
 
         // then
         assertNotNull(result);
@@ -155,7 +155,7 @@ class ActRestControllerTest {
         String actStatus = "checkingPtd";
 
         // when
-        var result = this.controller.turnStatusToCorrection(actId, actStatus);
+        var result = this.controller.turnActStatus(actId, actStatus);
 
         // then
         assertNotNull(result);
@@ -171,7 +171,7 @@ class ActRestControllerTest {
         String actStatus = "checkingBD";
 
         // when
-        var result = this.controller.turnStatusToCorrection(actId, actStatus);
+        var result = this.controller.turnActStatus(actId, actStatus);
 
         // then
         assertNotNull(result);
@@ -187,7 +187,7 @@ class ActRestControllerTest {
         String actStatus = "accepted";
 
         // when
-        var result = this.controller.turnStatusToCorrection(actId, actStatus);
+        var result = this.controller.turnActStatus(actId, actStatus);
 
         // then
         assertNotNull(result);
@@ -203,7 +203,7 @@ class ActRestControllerTest {
         String actStatus = "invalid";
 
         // when
-        var exception = assertThrows(InvalidActStatusException.class, () -> this.controller.turnStatusToCorrection(actId, actStatus));
+        var exception = assertThrows(InvalidActStatusException.class, () -> this.controller.turnActStatus(actId, actStatus));
 
         // then
         assertEquals("catalogue.errors.act.bad_request", exception.getMessage());

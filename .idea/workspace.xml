@@ -4,20 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="508ca5a5-2a9f-40e3-8a06-75479503d0aa" name="Changes" comment="CDL. ActsLogControllerTest">
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manager-app/src/test/java/ru/docs/construction/manager/config/TestingBeans.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manager-app/src/test/java/ru/docs/construction/manager/controller/ActsLogControllerIT.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manager-app/src/test/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/diff-generator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/diff-generator.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="508ca5a5-2a9f-40e3-8a06-75479503d0aa" name="Changes" comment="CDL. ActRepositoryIT">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalogue-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/catalogue-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalogue-service/src/test/java/ru/docs/construction/catalogue/controller/ActRestControllerTestIT.java" beforeDir="false" afterPath="$PROJECT_DIR$/catalogue-service/src/test/java/ru/docs/construction/catalogue/controller/ActRestControllerTestIT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalogue-service/src/test/java/ru/docs/construction/catalogue/repository/ActRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/catalogue-service/src/test/java/ru/docs/construction/catalogue/repository/ActRepositoryIT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalogue-service/src/test/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/catalogue-service/src/test/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalogue-service/src/test/resources/sql/acts.sql" beforeDir="false" afterPath="$PROJECT_DIR$/catalogue-service/src/test/resources/sql/acts.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalogue-service/src/main/java/ru/docs/construction/catalogue/controller/ActRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/catalogue-service/src/main/java/ru/docs/construction/catalogue/controller/ActRestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalogue-service/src/test/java/ru/docs/construction/catalogue/controller/ActRestControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/catalogue-service/src/test/java/ru/docs/construction/catalogue/controller/ActRestControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalogue-service/src/test/java/ru/docs/construction/catalogue/controller/ActRestControllerTestIT.java" beforeDir="false" afterPath="$PROJECT_DIR$/catalogue-service/src/test/java/ru/docs/construction/catalogue/controller/ActRestControllerIT.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,8 +64,24 @@
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "JUnit.ActRepositoryIT.findAllBySectionLikeIgnoreCaseOrderById_ReturnsFilteredActsList.executor": "Coverage",
-    "JUnit.ActRepositoryIT.findAllOrderById_ReturnsActsListOrderedById.executor": "Run",
+    "JUnit.ActRepositoryIT.findAllOrderById_ReturnsActsListOrderedById.executor": "Coverage",
     "JUnit.ActRepositoryTest.findAllBySectionLikeIgnoreCaseOrderById_ReturnsFilteredActsList.executor": "Run",
+    "JUnit.ActRestControllerIT.deleteAct_ActDoesNotExist_ReturnsNotFound.executor": "Run",
+    "JUnit.ActRestControllerIT.deleteAct_ActExists_ReturnsNoContent.executor": "Coverage",
+    "JUnit.ActRestControllerIT.deleteAct_UserIsNotAuthorized_ReturnsForbidden.executor": "Run",
+    "JUnit.ActRestControllerIT.executor": "Coverage",
+    "JUnit.ActRestControllerIT.findAct_ActDoesNotExist_ReturnsNotFound.executor": "Coverage",
+    "JUnit.ActRestControllerIT.findAct_ActExists_ReturnsActsList.executor": "Run",
+    "JUnit.ActRestControllerIT.findAct_UserIsNotAuthorized_ReturnsForbidden.executor": "Coverage",
+    "JUnit.ActRestControllerIT.turnActStatus_UserIsNotAuthorized_ReturnsForbidden.executor": "Run",
+    "JUnit.ActRestControllerIT.turnStatusToCorrection_ActDoesNotExist_ReturnsNotFound.executor": "Run",
+    "JUnit.ActRestControllerIT.turnStatusToCorrection_RequestIsInvalid_InvalidActStatusException.executor": "Run",
+    "JUnit.ActRestControllerIT.turnStatusToCorrection_RequestIsValid_ReturnsNoContent.executor": "Run",
+    "JUnit.ActRestControllerIT.turnStatusToCorrection_ReturnsNoContent.executor": "Run",
+    "JUnit.ActRestControllerIT.updateAct_ActDoesNotExist_ReturnsNotFound.executor": "Run",
+    "JUnit.ActRestControllerIT.updateAct_RequestIsNotValid_ReturnsBadRequest.executor": "Run",
+    "JUnit.ActRestControllerIT.updateAct_RequestIsValid_ReturnsNoContent.executor": "Run",
+    "JUnit.ActRestControllerIT.updateAct_UserIsNotAuthorized_ReturnsForbidden.executor": "Run",
     "JUnit.ActRestControllerTest.executor": "Coverage",
     "JUnit.ActRestControllerTest.handleInvalidActStatusException_ReturnsBadRequest.executor": "Coverage",
     "JUnit.ActRestControllerTest.turnStatusToCorrection_RequestIsValid_ReturnsNoContent.executor": "Coverage",
@@ -106,6 +113,7 @@
     "JUnit.DefaultActServiceTest.updateActStatus_ActExists_UpdatesActStatus.executor": "Coverage",
     "JUnit.DefaultActServiceTest.updateAct_ActDoesNotExist_ThrowsNoSuchElementException.executor": "Coverage",
     "JUnit.DefaultActServiceTest.updateAct_ActExists_UpdatesAct.executor": "Coverage",
+    "JUnit.catalogue in catalogue-service.executor": "Coverage",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
@@ -174,40 +182,8 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ActRepositoryIT.findAllOrderById_ReturnsActsListOrderedById">
-    <configuration name="ActRepositoryIT.findAllBySectionLikeIgnoreCaseOrderById_ReturnsFilteredActsList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="catalogue-service" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.docs.construction.catalogue.repository.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ru.docs.construction.catalogue.repository" />
-      <option name="MAIN_CLASS_NAME" value="ru.docs.construction.catalogue.repository.ActRepositoryIT" />
-      <option name="METHOD_NAME" value="findAllBySectionLikeIgnoreCaseOrderById_ReturnsFilteredActsList" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ActRepositoryIT.findAllOrderById_ReturnsActsListOrderedById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="catalogue-service" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.docs.construction.catalogue.repository.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ru.docs.construction.catalogue.repository" />
-      <option name="MAIN_CLASS_NAME" value="ru.docs.construction.catalogue.repository.ActRepositoryIT" />
-      <option name="METHOD_NAME" value="findAllOrderById_ReturnsActsListOrderedById" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ActRestControllerTestIT.findAct_ActExists_ReturnsActsList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.ActRestControllerIT.turnActStatus_UserIsNotAuthorized_ReturnsForbidden">
+    <configuration name="ActRestControllerIT.turnActStatus_UserIsNotAuthorized_ReturnsForbidden" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="catalogue-service" />
       <extension name="coverage">
         <pattern>
@@ -216,24 +192,72 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="ru.docs.construction.catalogue.controller" />
-      <option name="MAIN_CLASS_NAME" value="ru.docs.construction.catalogue.controller.ActRestControllerTestIT" />
-      <option name="METHOD_NAME" value="findAct_ActExists_ReturnsActsList" />
+      <option name="MAIN_CLASS_NAME" value="ru.docs.construction.catalogue.controller.ActRestControllerIT" />
+      <option name="METHOD_NAME" value="turnActStatus_UserIsNotAuthorized_ReturnsForbidden" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ActsLogControllerIT.getNewProductPage_ReturnsProductPage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="manager-app" />
+    <configuration name="ActRestControllerIT.turnStatusToCorrection_ActDoesNotExist_ReturnsNotFound" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="catalogue-service" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ru.docs.construction.manager.controller.*" />
+          <option name="PATTERN" value="ru.docs.construction.catalogue.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="ru.docs.construction.manager.controller" />
-      <option name="MAIN_CLASS_NAME" value="ru.docs.construction.manager.controller.ActsLogControllerIT" />
-      <option name="METHOD_NAME" value="getNewProductPage_ReturnsProductPage" />
+      <option name="PACKAGE_NAME" value="ru.docs.construction.catalogue.controller" />
+      <option name="MAIN_CLASS_NAME" value="ru.docs.construction.catalogue.controller.ActRestControllerIT" />
+      <option name="METHOD_NAME" value="turnStatusToCorrection_ActDoesNotExist_ReturnsNotFound" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ActRestControllerIT.turnStatusToCorrection_RequestIsInvalid_InvalidActStatusException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="catalogue-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.docs.construction.catalogue.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.docs.construction.catalogue.controller" />
+      <option name="MAIN_CLASS_NAME" value="ru.docs.construction.catalogue.controller.ActRestControllerIT" />
+      <option name="METHOD_NAME" value="turnStatusToCorrection_RequestIsInvalid_InvalidActStatusException" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ActRestControllerIT.turnStatusToCorrection_RequestIsValid_ReturnsNoContent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="catalogue-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.docs.construction.catalogue.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.docs.construction.catalogue.controller" />
+      <option name="MAIN_CLASS_NAME" value="ru.docs.construction.catalogue.controller.ActRestControllerIT" />
+      <option name="METHOD_NAME" value="turnStatusToCorrection_RequestIsValid_ReturnsNoContent" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ActRestControllerIT.turnStatusToCorrection_ReturnsNoContent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="catalogue-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.docs.construction.catalogue.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.docs.construction.catalogue.controller" />
+      <option name="MAIN_CLASS_NAME" value="ru.docs.construction.catalogue.controller.ActRestControllerIT" />
+      <option name="METHOD_NAME" value="turnStatusToCorrection_ReturnsNoContent" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -256,36 +280,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ManagerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <option name="ACTIVE_PROFILES" value="standalone" />
-      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
-      <module name="manager-app" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="ru.docs.construction.manager.ManagerApplication" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.docs.construction.manager.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
-      <item itemvalue="JUnit.ActRepositoryIT.findAllOrderById_ReturnsActsListOrderedById" />
-      <item itemvalue="JUnit.ActRepositoryIT.findAllBySectionLikeIgnoreCaseOrderById_ReturnsFilteredActsList" />
-      <item itemvalue="JUnit.ActRestControllerTestIT.findAct_ActExists_ReturnsActsList" />
-      <item itemvalue="JUnit.ActsLogControllerIT.getNewProductPage_ReturnsProductPage" />
+      <item itemvalue="JUnit.ActRestControllerIT.turnActStatus_UserIsNotAuthorized_ReturnsForbidden" />
+      <item itemvalue="JUnit.ActRestControllerIT.turnStatusToCorrection_ActDoesNotExist_ReturnsNotFound" />
+      <item itemvalue="JUnit.ActRestControllerIT.turnStatusToCorrection_RequestIsInvalid_InvalidActStatusException" />
+      <item itemvalue="JUnit.ActRestControllerIT.turnStatusToCorrection_RequestIsValid_ReturnsNoContent" />
+      <item itemvalue="JUnit.ActRestControllerIT.turnStatusToCorrection_ReturnsNoContent" />
       <item itemvalue="Spring Boot.CatalogueServiceApplication" />
-      <item itemvalue="Spring Boot.ManagerApplication" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ActRepositoryIT.findAllOrderById_ReturnsActsListOrderedById" />
-        <item itemvalue="JUnit.ActRepositoryIT.findAllBySectionLikeIgnoreCaseOrderById_ReturnsFilteredActsList" />
-        <item itemvalue="Spring Boot.ManagerApplication" />
-        <item itemvalue="JUnit.ActRestControllerTestIT.findAct_ActExists_ReturnsActsList" />
-        <item itemvalue="JUnit.ActsLogControllerIT.getNewProductPage_ReturnsProductPage" />
+        <item itemvalue="JUnit.ActRestControllerIT.turnActStatus_UserIsNotAuthorized_ReturnsForbidden" />
+        <item itemvalue="JUnit.ActRestControllerIT.turnStatusToCorrection_ActDoesNotExist_ReturnsNotFound" />
+        <item itemvalue="JUnit.ActRestControllerIT.turnStatusToCorrection_RequestIsValid_ReturnsNoContent" />
+        <item itemvalue="JUnit.ActRestControllerIT.turnStatusToCorrection_RequestIsInvalid_InvalidActStatusException" />
+        <item itemvalue="JUnit.ActRestControllerIT.turnStatusToCorrection_ReturnsNoContent" />
       </list>
     </recent_temporary>
   </component>
@@ -345,7 +354,7 @@
       <workItem from="1730393707329" duration="10562000" />
       <workItem from="1730812534658" duration="14748000" />
       <workItem from="1730831804136" duration="4008000" />
-      <workItem from="1730914933899" duration="1899000" />
+      <workItem from="1730914933899" duration="6619000" />
     </task>
     <task id="LOCAL-00001" summary="CDL. MVP">
       <option name="closed" value="true" />
@@ -451,7 +460,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730820716187</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="CDL. ActRepositoryIT">
+      <option name="closed" value="true" />
+      <created>1730916978452</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1730916978452</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -481,7 +498,8 @@
     <MESSAGE value="CDL. ActRestControllerTest" />
     <MESSAGE value="CDL. DefaultActServiceTest" />
     <MESSAGE value="CDL. ActsLogControllerTest" />
-    <option name="LAST_COMMIT_MESSAGE" value="CDL. ActsLogControllerTest" />
+    <MESSAGE value="CDL. ActRepositoryIT" />
+    <option name="LAST_COMMIT_MESSAGE" value="CDL. ActRepositoryIT" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
@@ -503,6 +521,7 @@
     <SUITE FILE_PATH="coverage/CDL$DefaultActServiceTest_findAllActs_FilterIsNotSet_ReturnsActsList.ic" NAME="DefaultActServiceTest.findAllActs_FilterIsNotSet_ReturnsActsList Coverage Results" MODIFIED="1730395738944" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>ru.docs.construction.catalogue.service.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/CDL$catalogue_in_catalogue_service.ic" NAME="catalogue in catalogue-service Coverage Results" MODIFIED="1730917423974" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
     <SUITE FILE_PATH="coverage/CDL$ActsLogControllerTest.ic" NAME="ActsLogControllerTest Coverage Results" MODIFIED="1730820552993" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>ru.docs.construction.manager.controller.*</FILTER>
     </SUITE>
@@ -527,8 +546,14 @@
     <SUITE FILE_PATH="coverage/CDL$ActsRestControllerTest.ic" NAME="ActsRestControllerTest Coverage Results" MODIFIED="1730313523803" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>ru.docs.construction.catalogue.controller.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/CDL$ActRestControllerIT_findAct_UserIsNotAuthorized_ReturnsForbidden.ic" NAME="ActRestControllerIT.findAct_UserIsNotAuthorized_ReturnsForbidden Coverage Results" MODIFIED="1730918202292" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>ru.docs.construction.catalogue.controller.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/CDL$ActsLogControllerTest_getNewActPage_ReturnsNewActPage.ic" NAME="ActsLogControllerTest.getNewActPage_ReturnsNewActPage Coverage Results" MODIFIED="1730814020490" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>ru.docs.construction.manager.controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/CDL$ActRestControllerIT.ic" NAME="ActRestControllerIT Coverage Results" MODIFIED="1730919643908" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>ru.docs.construction.catalogue.controller.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/CDL$DefaultActServiceTest_updateActStatus_ActDoesNotExist_ThrowsNoSuchElementException.ic" NAME="DefaultActServiceTest.updateActStatus_ActDoesNotExist_ThrowsNoSuchElementException Coverage Results" MODIFIED="1730402581049" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>ru.docs.construction.catalogue.service.*</FILTER>
@@ -536,10 +561,16 @@
     <SUITE FILE_PATH="coverage/CDL$ActRestControllerTestIT_findAct_ActExists_ReturnsActsList.ic" NAME="ActRestControllerTestIT.findAct_ActExists_ReturnsActsList Coverage Results" MODIFIED="1730835294728" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>ru.docs.construction.catalogue.controller.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/CDL$ActRestControllerIT_findAct_ActDoesNotExist_ReturnsNotFound.ic" NAME="ActRestControllerIT.findAct_ActDoesNotExist_ReturnsNotFound Coverage Results" MODIFIED="1730917999697" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>ru.docs.construction.catalogue.controller.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/CDL$ActRestControllerTest_turnStatusToCorrection_RequestIsValid_ReturnsNoContent.ic" NAME="ActRestControllerTest.turnStatusToCorrection_RequestIsValid_ReturnsNoContent Coverage Results" MODIFIED="1730316542216" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>ru.docs.construction.catalogue.controller.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/CDL$ActRestControllerTest_turnStatusToCorrection_RequestUpdateInvalidActStatus_ThrowsInvalidActStatusException.ic" NAME="ActRestControllerTest.turnStatusToCorrection_RequestUpdateInvalidActStatus_ThrowsInvalidActStatusException Coverage Results" MODIFIED="1730317957513" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>ru.docs.construction.catalogue.controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/CDL$ActRestControllerIT_deleteAct_ActExists_ReturnsNoContent.ic" NAME="ActRestControllerIT.deleteAct_ActExists_ReturnsNoContent Coverage Results" MODIFIED="1730919455821" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>ru.docs.construction.catalogue.controller.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/CDL$DefaultActServiceTest_findAct_ProductExists_ReturnsNotEmptyOptional.ic" NAME="DefaultActServiceTest.findAct_ProductExists_ReturnsNotEmptyOptional Coverage Results" MODIFIED="1730399852119" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
@@ -553,6 +584,9 @@
     </SUITE>
     <SUITE FILE_PATH="coverage/CDL$ActRepositoryIT_findAllBySectionLikeIgnoreCaseOrderById_ReturnsFilteredActsList.ic" NAME="ActRepositoryIT.findAllBySectionLikeIgnoreCaseOrderById_ReturnsFilteredActsList Coverage Results" MODIFIED="1730916419522" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>ru.docs.construction.catalogue.repository.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/CDL$ActRestControllerIT_findAct_ActExists_ReturnsActsList.ic" NAME="ActRestControllerIT.findAct_ActExists_ReturnsActsList Coverage Results" MODIFIED="1730917330724" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>ru.docs.construction.catalogue.controller.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/CDL$ActRestControllerTest_turnStatusToCorrection_RequestUpdateActStatusToCheckingQc_ReturnsNoContent.ic" NAME="ActRestControllerTest.turnStatusToCorrection_RequestUpdateActStatusToCheckingQc_ReturnsNoContent Coverage Results" MODIFIED="1730316716070" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>ru.docs.construction.catalogue.controller.*</FILTER>
@@ -568,6 +602,9 @@
     </SUITE>
     <SUITE FILE_PATH="coverage/CDL$DefaultActServiceTest.ic" NAME="DefaultActServiceTest Coverage Results" MODIFIED="1730402604347" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>ru.docs.construction.catalogue.service.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/CDL$ActRepositoryIT_findAllOrderById_ReturnsActsListOrderedById.ic" NAME="ActRepositoryIT.findAllOrderById_ReturnsActsListOrderedById Coverage Results" MODIFIED="1730916868421" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>ru.docs.construction.catalogue.repository.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/CDL$DefaultActServiceTest_createAct_ReturnsCreatedAct.ic" NAME="DefaultActServiceTest.createAct_ReturnsCreatedAct Coverage Results" MODIFIED="1730401203995" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>ru.docs.construction.catalogue.service.*</FILTER>

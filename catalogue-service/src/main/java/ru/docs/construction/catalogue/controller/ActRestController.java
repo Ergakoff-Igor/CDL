@@ -58,7 +58,7 @@ public class ActRestController {
     }
 
     @PatchMapping("/{status}")
-    public ResponseEntity<?> turnStatusToCorrection(@PathVariable("actId") long actId, @PathVariable("status") String actStatus) {
+    public ResponseEntity<?> turnActStatus(@PathVariable("actId") long actId, @PathVariable("status") String actStatus) {
 
         switch (actStatus) {
             case "correction" -> this.actService.updateActStatus(actId, ActStatus.CORRECTION);
