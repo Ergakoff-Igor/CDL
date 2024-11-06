@@ -128,9 +128,11 @@ class ActRestControllerIT {
                         content().contentTypeCompatibleWith(MediaType.APPLICATION_PROBLEM_JSON),
                         content().json("""
                                 {
-                                    "errors": ["Месяц отчетного периода должен быть указан",
+                                    "errors": [
+                                            "Месяц отчетного периода должен быть указан",
                                             "Год отчетного периода должен быть указан",
-                                            "Раздел проекта должен быть указан"]
+                                            "Раздел проекта должен быть указан"
+                                    ]
                                 }""")
                 );
     }
