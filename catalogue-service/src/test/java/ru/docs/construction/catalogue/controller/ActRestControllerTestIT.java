@@ -27,7 +27,8 @@ class ActRestControllerTestIT {
     @Sql("/sql/acts.sql")
     void findAct_ActExists_ReturnsActsList() throws Exception {
         // given
-        var requestBuilder = MockMvcRequestBuilders.get("/catalogue-api/acts/1")
+        var requestBuilder = MockMvcRequestBuilders.get("/catalogue-api/acts")
+                .param("filter", "ЭМ")
                 .with(jwt().jwt(builder -> builder.claim("scope", "view_actslog")));
 
         // when
@@ -38,14 +39,9 @@ class ActRestControllerTestIT {
                         status().isOk(),
                         content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON),
                         content().json("""
-                                {
-                                    "id": 1,
-                                    "month": "Январь",
-                                    "year": 2024,
-                                    "section": "ЭМ",
-                                    "price": "1000",
-                                    "actStatus": "ACCEPTED"
-                                }""")
+                                [
+                                    {"id": 1, "month": "Январь", "year": 2024, "section": "ЭМ", "price":  2000, "actStatus": "CHECKING_QC"}
+                                ]""")
                 );
     }
 }
