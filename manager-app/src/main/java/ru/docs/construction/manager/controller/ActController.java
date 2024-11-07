@@ -71,6 +71,12 @@ public class ActController {
         return "redirect:/catalogue/acts/list";
     }
 
+    @PostMapping("/{status}/turnStatus")
+    public String turnStatusToCorrection(@ModelAttribute("act") Act act, @PathVariable("status") String actStatus) {
+        actsRestClient.updateActStatus(act.id(), actStatus);
+        return "redirect:/catalogue/acts/list";
+    }
+
     @ExceptionHandler(NoSuchElementException.class)
     public String handleNoSuchElementException(NoSuchElementException exception, Model model,
                                                HttpServletResponse response, Locale locale) {

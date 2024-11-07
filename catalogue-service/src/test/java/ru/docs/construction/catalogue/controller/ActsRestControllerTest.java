@@ -35,7 +35,8 @@ class ActsRestControllerTest {
         // given
         var filter = "АК";
 
-        doReturn(List.of(new Act(1L, "Январь", (short) 2024, "ЭМ", 2000d, ActStatus.CHECKING_QC),
+        doReturn(List.of(
+                new Act(1L, "Январь", (short) 2024, "ЭМ", 2000d, ActStatus.CHECKING_QC),
                 new Act(2L, "Февраль", (short) 2024, "АК", 1000d, ActStatus.ACCEPTED)))
                 .when(this.actService).findAllActs("АК");
 

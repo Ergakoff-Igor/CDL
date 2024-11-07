@@ -47,7 +47,7 @@ class ActsLogControllerTest {
         var result = this.controller.getActsList(model, filter);
 
         // then
-        assertEquals("catalogue/acts/index", result);
+        assertEquals("catalogue/acts/list", result);
         assertEquals(filter, model.getAttribute("filter"));
         assertEquals(acts, model.getAttribute("acts"));
     }

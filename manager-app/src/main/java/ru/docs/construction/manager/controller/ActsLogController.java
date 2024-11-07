@@ -25,7 +25,7 @@ public class ActsLogController {
     public String getActsList(Model model, @RequestParam(name = "filter", required = false) String filter) {
         model.addAttribute("acts", this.actsRestClient.findAllActs(filter));
         model.addAttribute("filter", filter);
-        return "catalogue/acts/index";
+        return "catalogue/acts/list";
     }
 
     @GetMapping("create")

@@ -28,7 +28,7 @@ public class SecurityBeans {
     public SecurityFilterChain securityFilterChain(HttpSecurity http, ClientRegistrationRepository clientRegistrationRepository) throws Exception {
         return http
                 .authorizeHttpRequests(authorizeHttpRequests -> authorizeHttpRequests
-                        .anyRequest().authenticated())
+                        .anyRequest().hasAnyRole("ADMIN", "BCD", "CONTRACTOR", "GUEST", "PTD", "QC"))
                 .oauth2Login(withDefaults())
                 .oauth2Client(withDefaults())
                 .oidcLogout(oidcLogout -> oidcLogout.backChannel(withDefaults()))

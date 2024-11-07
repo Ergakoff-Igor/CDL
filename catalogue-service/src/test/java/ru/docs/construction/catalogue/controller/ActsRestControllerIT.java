@@ -101,10 +101,12 @@ class ActsRestControllerIT {
         var requestBuilder = MockMvcRequestBuilders.post("/catalogue-api/acts")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content("""
-                        {   "month": null,
+                          {
+                            "month": null,
                             "year": null,
                             "section": null,
-                            "price":  5000}""")
+                            "price":  5000
+                            }""")
                 .locale(Locale.of("ru", "RU"))
                 .with(jwt().jwt(builder -> builder.claim("scope", "edit_actslog")));
 
