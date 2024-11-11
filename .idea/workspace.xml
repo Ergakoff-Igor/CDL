@@ -4,18 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="508ca5a5-2a9f-40e3-8a06-75479503d0aa" name="Changes" comment="CDL. ActsRestControllerIT">
+    <list default="true" id="508ca5a5-2a9f-40e3-8a06-75479503d0aa" name="Changes" comment="CDL. ActsLogControllerIT">
+      <change afterPath="$PROJECT_DIR$/manager-app/src/test/java/ru/docs/construction/manager/controller/ActControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalogue-service/src/test/java/ru/docs/construction/catalogue/controller/ActsRestControllerIT.java" beforeDir="false" afterPath="$PROJECT_DIR$/catalogue-service/src/test/java/ru/docs/construction/catalogue/controller/ActsRestControllerIT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalogue-service/src/test/java/ru/docs/construction/catalogue/controller/ActsRestControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/catalogue-service/src/test/java/ru/docs/construction/catalogue/controller/ActsRestControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalogue-service/src/test/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/catalogue-service/src/test/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/catalogue-service/src/test/resources/sql/acts.sql" beforeDir="false" afterPath="$PROJECT_DIR$/catalogue-service/src/test/resources/sql/acts.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manager-app/src/main/java/ru/docs/construction/manager/config/SecurityBeans.java" beforeDir="false" afterPath="$PROJECT_DIR$/manager-app/src/main/java/ru/docs/construction/manager/config/SecurityBeans.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/manager-app/src/main/java/ru/docs/construction/manager/controller/ActController.java" beforeDir="false" afterPath="$PROJECT_DIR$/manager-app/src/main/java/ru/docs/construction/manager/controller/ActController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manager-app/src/main/java/ru/docs/construction/manager/controller/ActsLogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/manager-app/src/main/java/ru/docs/construction/manager/controller/ActsLogController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manager-app/src/main/java/ru/docs/construction/manager/controller/CheckingActController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manager-app/src/main/resources/templates/catalogue/acts/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/manager-app/src/main/resources/templates/catalogue/acts/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manager-app/src/test/java/ru/docs/construction/manager/controller/ActsLogControllerIT.java" beforeDir="false" afterPath="$PROJECT_DIR$/manager-app/src/test/java/ru/docs/construction/manager/controller/ActsLogControllerIT.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +63,14 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
+    "JUnit.ActControllerTest.act_ActDoesNotExist_ThrowsNoSuchElementException.executor": "Run",
+    "JUnit.ActControllerTest.act_ActExists_ReturnsAct.executor": "Run",
+    "JUnit.ActControllerTest.deleteAct_RedirectsToActsListPage.executor": "Run",
+    "JUnit.ActControllerTest.getActEditPage_ReturnsActEditPage.executor": "Run",
+    "JUnit.ActControllerTest.getAct_ReturnsActPage.executor": "Run",
+    "JUnit.ActControllerTest.handleNoSuchElementException_Returns404ErrorPage.executor": "Run",
+    "JUnit.ActControllerTest.updateAct_RequestIsInvalid_ReturnsActEditPage.executor": "Run",
+    "JUnit.ActControllerTest.updateAct_RequestIsValid_RedirectsToActPage.executor": "Run",
     "JUnit.ActRepositoryIT.findAllBySectionLikeIgnoreCaseOrderById_ReturnsFilteredActsList.executor": "Coverage",
     "JUnit.ActRepositoryIT.findAllOrderById_ReturnsActsListOrderedById.executor": "Coverage",
     "JUnit.ActRepositoryTest.findAllBySectionLikeIgnoreCaseOrderById_ReturnsFilteredActsList.executor": "Run",
@@ -98,7 +99,7 @@
     "JUnit.ActRestControllerTest.turnStatusToCorrection_RequestUpdateActStatusToCheckingQc_ReturnsNoContent.executor": "Coverage",
     "JUnit.ActRestControllerTest.turnStatusToCorrection_RequestUpdateInvalidActStatus_ThrowsInvalidActStatusException.executor": "Run",
     "JUnit.ActRestControllerTestIT.findAct_ActExists_ReturnsActsList.executor": "Coverage",
-    "JUnit.ActsLogControllerIT.createAct_RequestIsValid_RedirectsToActPage.executor": "Debug",
+    "JUnit.ActsLogControllerIT.createAct_RequestIsValid_RedirectsToActPage.executor": "Run",
     "JUnit.ActsLogControllerIT.createAct_UserIsNotAuthorized_ReturnsForbidden.executor": "Coverage",
     "JUnit.ActsLogControllerIT.createProduct_RequestIsInvalid_ReturnsNewProductPage.executor": "Run",
     "JUnit.ActsLogControllerIT.executor": "Run",
@@ -110,7 +111,7 @@
     "JUnit.ActsLogControllerIT.getProductList_UserIsNotAuthorized_ReturnsForbidden.executor": "Run",
     "JUnit.ActsLogControllerTest.createAct_RequestIsInvalid_ReturnsActFormWithErrors.executor": "Coverage",
     "JUnit.ActsLogControllerTest.createAct_RequestIsValid_ReturnsRedirectionToActPage.executor": "Coverage",
-    "JUnit.ActsLogControllerTest.executor": "Run",
+    "JUnit.ActsLogControllerTest.executor": "Coverage",
     "JUnit.ActsLogControllerTest.getActsList_ReturnsActsListPage.executor": "Run",
     "JUnit.ActsLogControllerTest.getNewActPage_ReturnsNewActPage.executor": "Coverage",
     "JUnit.ActsRestControllerIT.createAct_RequestIsInvalid_ReturnsProblemDetail.executor": "Coverage",
@@ -186,8 +187,8 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
-      <recent name="ru.docs.construction.catalogue.controller" />
       <recent name="ru.docs.construction.manager.controller" />
+      <recent name="ru.docs.construction.catalogue.controller" />
       <recent name="ru.docs.construction.catalogue.repository" />
       <recent name="ru.docs.construction.catalogue.service" />
     </key>
@@ -204,8 +205,8 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ActsLogControllerIT">
-    <configuration name="ActsLogControllerIT" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.ActsLogControllerTest">
+    <configuration name="ActControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="manager-app" />
       <extension name="coverage">
         <pattern>
@@ -214,13 +215,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="ru.docs.construction.manager.controller" />
-      <option name="MAIN_CLASS_NAME" value="ru.docs.construction.manager.controller.ActsLogControllerIT" />
+      <option name="MAIN_CLASS_NAME" value="ru.docs.construction.manager.controller.ActControllerTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ActsLogControllerIT.createAct_RequestIsValid_RedirectsToActPage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ActControllerTest.deleteAct_RedirectsToActsListPage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="manager-app" />
       <extension name="coverage">
         <pattern>
@@ -229,14 +230,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="ru.docs.construction.manager.controller" />
-      <option name="MAIN_CLASS_NAME" value="ru.docs.construction.manager.controller.ActsLogControllerIT" />
-      <option name="METHOD_NAME" value="createAct_RequestIsValid_RedirectsToActPage" />
+      <option name="MAIN_CLASS_NAME" value="ru.docs.construction.manager.controller.ActControllerTest" />
+      <option name="METHOD_NAME" value="deleteAct_RedirectsToActsListPage" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ActsLogControllerIT.createAct_UserIsNotAuthorized_ReturnsForbidden" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ActControllerTest.handleNoSuchElementException_Returns404ErrorPage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="manager-app" />
       <extension name="coverage">
         <pattern>
@@ -245,14 +246,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="ru.docs.construction.manager.controller" />
-      <option name="MAIN_CLASS_NAME" value="ru.docs.construction.manager.controller.ActsLogControllerIT" />
-      <option name="METHOD_NAME" value="createAct_UserIsNotAuthorized_ReturnsForbidden" />
+      <option name="MAIN_CLASS_NAME" value="ru.docs.construction.manager.controller.ActControllerTest" />
+      <option name="METHOD_NAME" value="handleNoSuchElementException_Returns404ErrorPage" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ActsLogControllerIT.getNewActPage_UserIsNotAuthorized_ReturnsForbidden" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ActControllerTest.turnActStatus_RequestIsValid_RedirectsToActsListPage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="manager-app" />
       <extension name="coverage">
         <pattern>
@@ -261,8 +262,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="ru.docs.construction.manager.controller" />
-      <option name="MAIN_CLASS_NAME" value="ru.docs.construction.manager.controller.ActsLogControllerIT" />
-      <option name="METHOD_NAME" value="getNewActPage_UserIsNotAuthorized_ReturnsForbidden" />
+      <option name="MAIN_CLASS_NAME" value="ru.docs.construction.manager.controller.ActControllerTest" />
+      <option name="METHOD_NAME" value="turnActStatus_RequestIsValid_RedirectsToActsListPage" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -316,21 +317,21 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.ActsLogControllerIT.createAct_UserIsNotAuthorized_ReturnsForbidden" />
+      <item itemvalue="JUnit.ActControllerTest" />
+      <item itemvalue="JUnit.ActControllerTest.deleteAct_RedirectsToActsListPage" />
+      <item itemvalue="JUnit.ActControllerTest.handleNoSuchElementException_Returns404ErrorPage" />
+      <item itemvalue="JUnit.ActControllerTest.turnActStatus_RequestIsValid_RedirectsToActsListPage" />
       <item itemvalue="JUnit.ActsLogControllerTest" />
-      <item itemvalue="JUnit.ActsLogControllerIT" />
-      <item itemvalue="JUnit.ActsLogControllerIT.createAct_RequestIsValid_RedirectsToActPage" />
-      <item itemvalue="JUnit.ActsLogControllerIT.getNewActPage_UserIsNotAuthorized_ReturnsForbidden" />
       <item itemvalue="Spring Boot.ManagerApplication" />
       <item itemvalue="Spring Boot.CatalogueServiceApplication" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ActsLogControllerIT" />
         <item itemvalue="JUnit.ActsLogControllerTest" />
-        <item itemvalue="JUnit.ActsLogControllerIT.createAct_RequestIsValid_RedirectsToActPage" />
-        <item itemvalue="JUnit.ActsLogControllerIT.createAct_UserIsNotAuthorized_ReturnsForbidden" />
-        <item itemvalue="JUnit.ActsLogControllerIT.getNewActPage_UserIsNotAuthorized_ReturnsForbidden" />
+        <item itemvalue="JUnit.ActControllerTest" />
+        <item itemvalue="JUnit.ActControllerTest.turnActStatus_RequestIsValid_RedirectsToActsListPage" />
+        <item itemvalue="JUnit.ActControllerTest.handleNoSuchElementException_Returns404ErrorPage" />
+        <item itemvalue="JUnit.ActControllerTest.deleteAct_RedirectsToActsListPage" />
       </list>
     </recent_temporary>
   </component>
@@ -397,7 +398,8 @@
       <workItem from="1731005557343" duration="212000" />
       <workItem from="1731005843323" duration="1074000" />
       <workItem from="1731006933995" duration="977000" />
-      <workItem from="1731008014014" duration="2432000" />
+      <workItem from="1731008014014" duration="3290000" />
+      <workItem from="1731346569770" duration="4123000" />
     </task>
     <task id="LOCAL-00001" summary="CDL. MVP">
       <option name="closed" value="true" />
@@ -535,7 +537,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730924541550</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="CDL. ActsLogControllerIT">
+      <option name="closed" value="true" />
+      <created>1731010696486</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1731010696486</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -568,7 +578,8 @@
     <MESSAGE value="CDL. ActRepositoryIT" />
     <MESSAGE value="CDL. ActRestControllerIT" />
     <MESSAGE value="CDL. ActsRestControllerIT" />
-    <option name="LAST_COMMIT_MESSAGE" value="CDL. ActsRestControllerIT" />
+    <MESSAGE value="CDL. ActsLogControllerIT" />
+    <option name="LAST_COMMIT_MESSAGE" value="CDL. ActsLogControllerIT" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
@@ -592,7 +603,7 @@
       <FILTER>ru.docs.construction.catalogue.service.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/CDL$catalogue_in_catalogue_service.ic" NAME="catalogue in catalogue-service Coverage Results" MODIFIED="1730917423974" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
-    <SUITE FILE_PATH="coverage/CDL$ActsLogControllerTest.ic" NAME="ActsLogControllerTest Coverage Results" MODIFIED="1731001604646" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+    <SUITE FILE_PATH="coverage/CDL$ActsLogControllerTest.ic" NAME="ActsLogControllerTest Coverage Results" MODIFIED="1731010575097" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>ru.docs.construction.manager.controller.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/CDL$ActRestControllerTest_turnStatusToCorrection_RequestUpdateActStatusToAccepted_ReturnsNoContent.ic" NAME="ActRestControllerTest.turnStatusToCorrection_RequestUpdateActStatusToAccepted_ReturnsNoContent Coverage Results" MODIFIED="1730316982916" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">

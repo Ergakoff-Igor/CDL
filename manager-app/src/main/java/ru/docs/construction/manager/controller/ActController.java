@@ -54,11 +54,13 @@ public class ActController {
     @PostMapping("edit")
     public String updateAct(@ModelAttribute(name = "act") Act act,
                             UpdateActPayload payload,
-                            Model model) {
+                            Model model,
+                            HttpServletResponse response) {
         try {
             this.actsRestClient.updateAct(act.id(), payload.month(), payload.year(), payload.section(), payload.price(), act.actStatus());
             return "redirect:/catalogue/acts/%d".formatted(act.id());
         } catch (BadRequestException exception) {
+            response.setStatus(HttpStatus.BAD_REQUEST.value());
             model.addAttribute("payload", payload);
             model.addAttribute("errors", exception.getErrors());
             return "catalogue/acts/edit";
@@ -72,7 +74,8 @@ public class ActController {
     }
 
     @PostMapping("/{status}/turnStatus")
-    public String turnStatusToCorrection(@ModelAttribute("act") Act act, @PathVariable("status") String actStatus) {
+    public String turnActStatus(@ModelAttribute("act") Act act,
+                                @PathVariable("status") String actStatus) {
         actsRestClient.updateActStatus(act.id(), actStatus);
         return "redirect:/catalogue/acts/list";
     }
