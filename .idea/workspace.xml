@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="508ca5a5-2a9f-40e3-8a06-75479503d0aa" name="Changes" comment="CDL. ActControllerTest">
-      <change afterPath="$PROJECT_DIR$/manager-app/src/test/java/ru/docs/construction/manager/controller/ActControllerIT.java" afterDir="false" />
+    <list default="true" id="508ca5a5-2a9f-40e3-8a06-75479503d0aa" name="Changes" comment="CDL. OAuthClientHttpRequestInterceptorTest">
+      <change afterPath="$PROJECT_DIR$/manager-app/src/test/java/ru/docs/construction/manager/security/OAuthClientHttpRequestInterceptorTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -148,9 +148,11 @@
     "JUnit.DefaultActServiceTest.updateActStatus_ActExists_UpdatesActStatus.executor": "Coverage",
     "JUnit.DefaultActServiceTest.updateAct_ActDoesNotExist_ThrowsNoSuchElementException.executor": "Coverage",
     "JUnit.DefaultActServiceTest.updateAct_ActExists_UpdatesAct.executor": "Coverage",
+    "JUnit.OAuthClientHttpRequestInterceptorTest.executor": "Run",
+    "JUnit.OAuthClientHttpRequestInterceptorTest.intercept_AuthorizationHeaderIsNotSet_AddsAuthorizationHeader.executor": "Run",
     "JUnit.catalogue in catalogue-service.executor": "Coverage",
     "JUnit.java in catalogue-service.executor": "Coverage",
-    "JUnit.manager in manager-app.executor": "Run",
+    "JUnit.manager in manager-app.executor": "Coverage",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
@@ -164,7 +166,7 @@
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Ierga/IdeaProjects/CDL/manager-app/src/test",
+    "last_opened_file_path": "C:/Users/Ierga/IdeaProjects/CDL/manager-app/src/test/java/ru/docs/construction/manager",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -188,11 +190,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Ierga\IdeaProjects\CDL\manager-app\src\test\java\ru\docs\construction\manager" />
       <recent name="C:\Users\Ierga\IdeaProjects\CDL\manager-app\src\test" />
       <recent name="C:\Users\Ierga\IdeaProjects\CDL\manager-app\src\test\java" />
       <recent name="C:\Users\Ierga\IdeaProjects\CDL\manager-app\src\test\java\ru\docs\construction\manager\config" />
       <recent name="C:\Users\Ierga\IdeaProjects\CDL\manager-app\src\main\java\ru\docs\construction\manager" />
-      <recent name="C:\Users\Ierga\IdeaProjects\CDL\catalogue-service\src\main\java\ru\docs\construction\catalogue" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Ierga\IdeaProjects\CDL" />
@@ -219,7 +221,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.manager in manager-app">
+  <component name="RunManager" selected="JUnit.OAuthClientHttpRequestInterceptorTest.intercept_AuthorizationHeaderIsNotSet_AddsAuthorizationHeader">
     <configuration name="ActControllerIT" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="manager-app" />
       <extension name="coverage">
@@ -231,22 +233,6 @@
       <option name="PACKAGE_NAME" value="ru.docs.construction.manager.controller" />
       <option name="MAIN_CLASS_NAME" value="ru.docs.construction.manager.controller.ActControllerIT" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ActControllerIT.deleteAct_ActDoesNotExist_ReturnsError404Page" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="manager-app" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.docs.construction.manager.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ru.docs.construction.manager.controller" />
-      <option name="MAIN_CLASS_NAME" value="ru.docs.construction.manager.controller.ActControllerIT" />
-      <option name="METHOD_NAME" value="deleteAct_ActDoesNotExist_ReturnsError404Page" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -267,17 +253,32 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ActControllerIT.deleteAct_UserIsNotAuthorized_ReturnsForbidden" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="OAuthClientHttpRequestInterceptorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="manager-app" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ru.docs.construction.manager.controller.*" />
+          <option name="PATTERN" value="ru.docs.construction.manager.security.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="ru.docs.construction.manager.controller" />
-      <option name="MAIN_CLASS_NAME" value="ru.docs.construction.manager.controller.ActControllerIT" />
-      <option name="METHOD_NAME" value="deleteAct_UserIsNotAuthorized_ReturnsForbidden" />
+      <option name="PACKAGE_NAME" value="ru.docs.construction.manager.security" />
+      <option name="MAIN_CLASS_NAME" value="ru.docs.construction.manager.security.OAuthClientHttpRequestInterceptorTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OAuthClientHttpRequestInterceptorTest.intercept_AuthorizationHeaderIsNotSet_AddsAuthorizationHeader" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="manager-app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.docs.construction.manager.security.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.docs.construction.manager.security" />
+      <option name="MAIN_CLASS_NAME" value="ru.docs.construction.manager.security.OAuthClientHttpRequestInterceptorTest" />
+      <option name="METHOD_NAME" value="intercept_AuthorizationHeaderIsNotSet_AddsAuthorizationHeader" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -325,20 +326,20 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.ActControllerIT" />
-      <item itemvalue="JUnit.ActControllerIT.deleteAct_ActDoesNotExist_ReturnsError404Page" />
       <item itemvalue="JUnit.ActControllerIT.deleteAct_ActExists_RedirectsToActsListPage" />
-      <item itemvalue="JUnit.ActControllerIT.deleteAct_UserIsNotAuthorized_ReturnsForbidden" />
+      <item itemvalue="JUnit.OAuthClientHttpRequestInterceptorTest" />
+      <item itemvalue="JUnit.OAuthClientHttpRequestInterceptorTest.intercept_AuthorizationHeaderIsNotSet_AddsAuthorizationHeader" />
       <item itemvalue="JUnit.manager in manager-app" />
       <item itemvalue="Spring Boot.ManagerApplication" />
       <item itemvalue="Spring Boot.CatalogueServiceApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.OAuthClientHttpRequestInterceptorTest.intercept_AuthorizationHeaderIsNotSet_AddsAuthorizationHeader" />
+        <item itemvalue="JUnit.OAuthClientHttpRequestInterceptorTest" />
         <item itemvalue="JUnit.manager in manager-app" />
         <item itemvalue="JUnit.ActControllerIT" />
         <item itemvalue="JUnit.ActControllerIT.deleteAct_ActExists_RedirectsToActsListPage" />
-        <item itemvalue="JUnit.ActControllerIT.deleteAct_UserIsNotAuthorized_ReturnsForbidden" />
-        <item itemvalue="JUnit.ActControllerIT.deleteAct_ActDoesNotExist_ReturnsError404Page" />
       </list>
     </recent_temporary>
   </component>
@@ -407,7 +408,7 @@
       <workItem from="1731006933995" duration="977000" />
       <workItem from="1731008014014" duration="3290000" />
       <workItem from="1731346569770" duration="8323000" />
-      <workItem from="1731516695788" duration="4676000" />
+      <workItem from="1731516695788" duration="5383000" />
     </task>
     <task id="LOCAL-00001" summary="CDL. MVP">
       <option name="closed" value="true" />
@@ -561,7 +562,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731351024426</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="CDL. ActControllerIT">
+      <option name="closed" value="true" />
+      <created>1731522382613</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1731522382613</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -596,7 +605,9 @@
     <MESSAGE value="CDL. ActsRestControllerIT" />
     <MESSAGE value="CDL. ActsLogControllerIT" />
     <MESSAGE value="CDL. ActControllerTest" />
-    <option name="LAST_COMMIT_MESSAGE" value="CDL. ActControllerTest" />
+    <MESSAGE value="CDL. ActControllerIT" />
+    <MESSAGE value="CDL. OAuthClientHttpRequestInterceptorTest" />
+    <option name="LAST_COMMIT_MESSAGE" value="CDL. OAuthClientHttpRequestInterceptorTest" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
@@ -613,6 +624,9 @@
       <FILTER>ru.docs.construction.catalogue.controller.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/CDL$java_in_catalogue_service.ic" NAME="java in catalogue-service Coverage Results" MODIFIED="1730921850042" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/CDL$ActControllerIT.ic" NAME="ActControllerIT Coverage Results" MODIFIED="1731522092658" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>ru.docs.construction.manager.controller.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/CDL$ActRestControllerTest_handleInvalidActStatusException_ReturnsBadRequest.ic" NAME="ActRestControllerTest.handleInvalidActStatusException_ReturnsBadRequest Coverage Results" MODIFIED="1730318213891" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>ru.docs.construction.catalogue.controller.*</FILTER>
     </SUITE>
@@ -632,6 +646,7 @@
     <SUITE FILE_PATH="coverage/CDL$DefaultActServiceTest_findAllProducts_FilterIsSet_ReturnsFilteredProductsList.ic" NAME="DefaultActServiceTest.findAllProducts_FilterIsSet_ReturnsFilteredProductsList Coverage Results" MODIFIED="1730399575332" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>ru.docs.construction.catalogue.service.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/CDL$manager_in_manager_app.ic" NAME="manager in manager-app Coverage Results" MODIFIED="1731522263865" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
     <SUITE FILE_PATH="coverage/CDL$ActsLogControllerIT_getNewProductPage_ReturnsProductPage.ic" NAME="ActsLogControllerIT.getNewProductPage_ReturnsProductPage Coverage Results" MODIFIED="1731003160745" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>ru.docs.construction.manager.controller.*</FILTER>
     </SUITE>
@@ -715,6 +730,9 @@
     </SUITE>
     <SUITE FILE_PATH="coverage/CDL$ActsRestControllerIT_createAct_UserIsNotAuthorized_ReturnsForbidden.ic" NAME="ActsRestControllerIT.createAct_UserIsNotAuthorized_ReturnsForbidden Coverage Results" MODIFIED="1730924304401" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>ru.docs.construction.catalogue.controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/CDL$OAuthClientHttpRequestInterceptorTest.ic" NAME="OAuthClientHttpRequestInterceptorTest Coverage Results" MODIFIED="1731522611033" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>ru.docs.construction.manager.security.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/CDL$ActRestControllerTest_turnStatusToCorrection_RequestUpdateActStatusToCheckingPtd_ReturnsNoContent.ic" NAME="ActRestControllerTest.turnStatusToCorrection_RequestUpdateActStatusToCheckingPtd_ReturnsNoContent Coverage Results" MODIFIED="1730316789060" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>ru.docs.construction.catalogue.controller.*</FILTER>
