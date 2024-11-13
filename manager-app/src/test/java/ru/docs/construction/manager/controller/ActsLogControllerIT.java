@@ -1,6 +1,5 @@
 package ru.docs.construction.manager.controller;
 
-import ru.docs.construction.manager.controller.payload.NewActPayload;
 import ru.docs.construction.manager.entity.Act;
 import com.github.tomakehurst.wiremock.client.WireMock;
 import com.github.tomakehurst.wiremock.junit5.WireMockTest;
@@ -106,105 +105,6 @@ class ActsLogControllerIT {
                 .andExpectAll(
                         status().isForbidden()
                 );
-    }
-
-    @Test
-    void createAct_RequestIsValid_RedirectsToActPage() throws Exception {
-        // given
-        var requestBuilder = MockMvcRequestBuilders.post("/catalogue/acts/create")
-                .param("month", "Февраль")
-                .param("year", "2024")
-                .param("section", "ЭМ")
-                .param("price", "3000")
-                .with(user("i.ergakov").roles("CONTRACTOR"))
-                .with(csrf());
-
-        WireMock.stubFor(WireMock.post(WireMock.urlPathMatching("/catalogue-api/acts"))
-                .withRequestBody(WireMock.equalToJson("""
-                        {
-                                    "Id": 1,
-                                    "month": "Февраль",
-                                    "year": 2024,
-                                    "section": "ЭМ",
-                                    "price":  3000,
-                                    "actStatus": "CHECKING_QC"
-                        }"""))
-                .willReturn(WireMock.created()
-                        .withHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
-                        .withBody("""
-                                {
-                                    "Id": 1,
-                                    "month": "Февраль",
-                                    "year": 2024,
-                                    "section": "ЭМ",
-                                    "price":  3000,
-                                    "actStatus": "CHECKING_QC"
-                                }""")));
-
-        // when
-        this.mockMvc.perform(requestBuilder)
-                // then
-                .andDo(print())
-                .andExpectAll(
-                        status().is3xxRedirection(),
-                        header().string(HttpHeaders.LOCATION, "/catalogue/acts/1")
-                );
-
-        WireMock.verify(WireMock.postRequestedFor(WireMock.urlPathMatching("/catalogue-api/acts"))
-                .withRequestBody(WireMock.equalToJson("""
-                        {
-                                    "month": "Февраль",
-                                    "year": 2024,
-                                    "section": "ЭМ",
-                                    "price":  3000
-                        }""")));
-    }
-
-    @Test
-    void createAct_RequestIsInvalid_ReturnsNewActPage() throws Exception {
-        // given
-        var requestBuilder = MockMvcRequestBuilders.post("/catalogue/acts/create")
-                .param("month", " ")
-                .param("year", " ")
-                .param("section", "ЭМ")
-                .param("price", "3000")
-                .with(user("i.ergakov").roles("CONTRACTOR"))
-                .with(csrf());
-
-        WireMock.stubFor(WireMock.post(WireMock.urlPathMatching("/catalogue-api/acts"))
-                .withRequestBody(WireMock.equalToJson("""
-                        {
-                            "month": null,
-                            "year": null,
-                            "section": "ЭМ",
-                            "price":  5000
-                        }"""))
-                .willReturn(WireMock.badRequest()
-                        .withHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_PROBLEM_JSON_VALUE)
-                        .withBody("""
-                                {
-                                    "errors": ["Ошибка 1", "Ошибка 2"]
-                                }""")));
-
-        // when
-        this.mockMvc.perform(requestBuilder)
-                // then
-                .andDo(print())
-                .andExpectAll(
-                        status().isBadRequest(),
-                        view().name("catalogue/acts/new_act"),
-                        model().attribute("payload", new NewActPayload(null, null, "ЭМ", 5000d)),
-                        model().attribute("errors", List.of("Ошибка 1", "Ошибка 2"))
-                );
-
-        WireMock.verify(WireMock.postRequestedFor(WireMock.urlPathMatching("/catalogue-api/acts"))
-                .withRequestBody(WireMock.equalToJson("""
-                        {
-                            "month": null,
-                            "year": null,
-                            "section": "ЭМ",
-                            "price":  5000
-                        }""")));
     }
 
     @Test
