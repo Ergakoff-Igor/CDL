@@ -1,5 +1,6 @@
 package ru.docs.construction.catalogue.controller;
 
+import org.junit.jupiter.api.DisplayName;
 import ru.docs.construction.catalogue.controller.payload.UpdateActPayload;
 import ru.docs.construction.catalogue.entity.Act;
 import ru.docs.construction.catalogue.entity.ActStatus;
@@ -23,6 +24,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
+@DisplayName("Модульные тесты ActRestController")
 class ActRestControllerTest {
 
     @Mock
@@ -35,6 +37,7 @@ class ActRestControllerTest {
     ActRestController controller;
 
     @Test
+    @DisplayName("getAct вернет акт по id")
     void getAct_ActExists_ReturnsAct() {
         // given
         var product = new Act(1L, "Январь", (short) 2024, "ЭМ", 1000d, ActStatus.ACCEPTED);
@@ -48,6 +51,7 @@ class ActRestControllerTest {
     }
 
     @Test
+    @DisplayName("getAct выбросит NoSuchElementException с сообщением об ошибке")
     void getAct_ActDoesNotExist_ThrowsNoSuchElementException() {
         // given
 
@@ -59,6 +63,7 @@ class ActRestControllerTest {
     }
 
     @Test
+    @DisplayName("getAct вернет акт")
     void findAct_ReturnsAct() {
         // given
         var act = new Act(1L, "Январь", (short) 2024, "ЭМ", 1000d, ActStatus.ACCEPTED);
@@ -71,6 +76,7 @@ class ActRestControllerTest {
     }
 
     @Test
+    @DisplayName("updateAct изменит акт и вернет статус NO_CONTENT")
     void updateAct_RequestIsValid_ReturnsNoContent() throws BindException {
         // given
         var payload = new UpdateActPayload("Январь", (short) 2024, "ЭМ", 2000d, ActStatus.CHECKING_QC);
@@ -87,6 +93,7 @@ class ActRestControllerTest {
     }
 
     @Test
+    @DisplayName("updateAct вернет статус BAD_REQUEST")
     void updateAct_RequestIsInvalid_ReturnsBadRequest() {
         // given
         var payload = new UpdateActPayload(" ", null, " ", 2000d, ActStatus.CHECKING_QC);
@@ -102,6 +109,7 @@ class ActRestControllerTest {
     }
 
     @Test
+    @DisplayName("updateAct вернет статус BAD_REQUEST")
     void updateAct_RequestIsInvalidAndBindResultIsBindException_ReturnsBadRequest() {
         // given
         var payload = new UpdateActPayload(" ", null, " ", 2000d, ActStatus.CHECKING_QC);
@@ -117,6 +125,7 @@ class ActRestControllerTest {
     }
 
     @Test
+    @DisplayName("turnActStatus изменит статус акта на correction и вернет статус noContent")
     void turnActStatus_RequestUpdateActStatusToCorrection_ReturnsNoContent() {
         // given
         long actId = 1L;
@@ -133,6 +142,7 @@ class ActRestControllerTest {
     }
 
     @Test
+    @DisplayName("turnActStatus изменит статус акта на checkingQC и вернет статус noContent")
     void turnActStatus_RequestUpdateActStatusToCheckingQc_ReturnsNoContent() {
         // given
         long actId = 1L;
@@ -149,6 +159,7 @@ class ActRestControllerTest {
     }
 
     @Test
+    @DisplayName("turnActStatus изменит статус акта на checkingPtd и вернет статус noContent")
     void turnStatusToCorrection_RequestUpdateActStatusToCheckingPtd_ReturnsNoContent() {
         // given
         long actId = 1L;
@@ -165,6 +176,7 @@ class ActRestControllerTest {
     }
 
     @Test
+    @DisplayName("turnActStatus изменит статус акта на checkingBD и вернет статус noContent")
     void turnStatusToCorrection_RequestUpdateActStatusToCheckingBdc_ReturnsNoContent() {
         // given
         long actId = 1L;
@@ -181,6 +193,7 @@ class ActRestControllerTest {
     }
 
     @Test
+    @DisplayName("turnActStatus изменит статус акта на accepted и вернет статус noContent")
     void turnStatusToCorrection_RequestUpdateActStatusToAccepted_ReturnsNoContent() {
         // given
         long actId = 1L;
@@ -197,6 +210,7 @@ class ActRestControllerTest {
     }
 
     @Test
+    @DisplayName("turnActStatus выбросит исключение InvalidActStatusException")
     void turnStatusToCorrection_RequestUpdateInvalidActStatus_ThrowsInvalidActStatusException() {
         // given
         long actId = 1L;
@@ -212,6 +226,7 @@ class ActRestControllerTest {
 
 
     @Test
+    @DisplayName("deleteAct удалит акт и вернет статус noContent")
     void deleteAct_ReturnsNoContent() {
         // given
 
@@ -226,13 +241,14 @@ class ActRestControllerTest {
     }
 
     @Test
+    @DisplayName("handleNoSuchElementException перехватит исключение NoSuchElementException исключение и вернет статус NOT_FOUND")
     void handleNoSuchElementException_ReturnsNotFound() {
         // given
         var exception = new NoSuchElementException("error_code");
-        var locale = new Locale("ru");
+        var locale = Locale.of("ru");
 
         doReturn("error details").when(this.messageSource)
-                .getMessage("error_code", new Object[0], "error_code", locale);
+                .getMessage("error_code", new Object[0], "error_code", Locale.of("ru"));
 
         // when
         var result = this.controller.handleNoSuchElementException(exception, locale);
@@ -248,13 +264,14 @@ class ActRestControllerTest {
     }
 
     @Test
+    @DisplayName("handleRuntimeException перехватит исключение InvalidActStatusException исключение и вернет статус BAD_REQUEST")
     void handleInvalidActStatusException_ReturnsBadRequest() {
         // given
         var exception = new InvalidActStatusException("error_code");
-        var locale = new Locale("ru");
+        var locale = Locale.of("ru");
 
         doReturn("error details").when(this.messageSource)
-                .getMessage("error_code", new Object[0], "error_code", locale);
+                .getMessage("error_code", new Object[0], "error_code", Locale.of("ru"));
 
         // when
         var result = this.controller.handleRuntimeException(exception, locale);

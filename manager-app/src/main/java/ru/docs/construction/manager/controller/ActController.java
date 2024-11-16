@@ -35,12 +35,12 @@ public class ActController {
     }
 
     @GetMapping
-    public String getAct(@AuthenticationPrincipal OidcUser  oidcUser, Model model) {
+    public String getAct(@AuthenticationPrincipal OidcUser oidcUser, Model model) {
 
         List<String> authorities = Optional.ofNullable(oidcUser.getClaimAsStringList("groups"))
-                                        .orElseGet(List::of)
-                                        .stream()
-                                        .filter(role -> role.startsWith("ROLE_")).toList();
+                .orElseGet(List::of)
+                .stream()
+                .filter(role -> role.startsWith("ROLE_")).toList();
         LoggerFactory.getLogger(ActController.class).info("Principal {}", authorities);
         model.addAttribute("authorities", authorities);
         return "catalogue/acts/act";

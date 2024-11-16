@@ -1,6 +1,7 @@
 package ru.docs.construction.manager.security;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
@@ -22,6 +23,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
+@DisplayName("Модульный тест OAuthClientHttpRequestInterceptor")
 class OAuthClientHttpRequestInterceptorTest {
 
     @Mock
@@ -35,6 +37,7 @@ class OAuthClientHttpRequestInterceptorTest {
     }
 
     @Test
+    @DisplayName("intercept добавляет заголовок авторизации")
     void intercept_AuthorizationHeaderIsNotSet_AddsAuthorizationHeader() throws IOException {
         // given
         var request = new MockClientHttpRequest();

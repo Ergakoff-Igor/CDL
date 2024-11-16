@@ -1,5 +1,6 @@
 package ru.docs.construction.manager.controller;
 
+import org.junit.jupiter.api.DisplayName;
 import ru.docs.construction.manager.entity.Act;
 import com.github.tomakehurst.wiremock.client.WireMock;
 import com.github.tomakehurst.wiremock.junit5.WireMockTest;
@@ -19,12 +20,14 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest
 @AutoConfigureMockMvc
 @WireMockTest(httpPort = 54321)
+@DisplayName("Интеграционные тесты ActController")
 class ActControllerIT {
 
     @Autowired
     MockMvc mockMvc;
 
     @Test
+    @DisplayName("getAct выбросит ошибку доступа - статус 403")
     void getAct_UserIsNotAuthorized_ReturnsForbidden() throws Exception {
         // given
         var requestBuilder = MockMvcRequestBuilders.get("/catalogue/acts/1")
@@ -40,6 +43,7 @@ class ActControllerIT {
     }
 
     @Test
+    @DisplayName("getActEditPage перенаправит на страницу редактирования акта")
     void getActEditPage_ActExists_ReturnsActEditPage() throws Exception {
         // given
         var requestBuilder = MockMvcRequestBuilders.get("/catalogue/acts/1/edit")
@@ -69,6 +73,7 @@ class ActControllerIT {
     }
 
     @Test
+    @DisplayName("getActEditPage выбросит исключение NoSuchElementException")
     void getActEditPage_ActDoesNotExist_ReturnsError404Page() throws Exception {
         // given
         var requestBuilder = MockMvcRequestBuilders.get("/catalogue/acts/1/edit")
@@ -89,6 +94,7 @@ class ActControllerIT {
     }
 
     @Test
+    @DisplayName("getActEditPage выбросит ошибку доступа - статус 403")
     void getActEditPage_UserIsNotAuthorized_ReturnsForbidden() throws Exception {
         // given
         var requestBuilder = MockMvcRequestBuilders.get("/catalogue/acts/1/edit")
@@ -104,6 +110,7 @@ class ActControllerIT {
     }
 
     @Test
+    @DisplayName("updateAct выбросит исключение NoSuchElementException")
     void updateAct_ActDoesNotExist_ReturnsError404Page() throws Exception {
         // given
         var requestBuilder = MockMvcRequestBuilders.post("/catalogue/acts/1/edit")
@@ -129,6 +136,7 @@ class ActControllerIT {
     }
 
     @Test
+    @DisplayName("updateAct выбросит ошибку доступа - статус 403")
     void updateAct_UserIsNotAuthorized_ReturnsForbidden() throws Exception {
         // given
         var requestBuilder = MockMvcRequestBuilders.post("/catalogue/acts/1/edit")
@@ -149,6 +157,7 @@ class ActControllerIT {
     }
 
     @Test
+    @DisplayName("deleteAct выбросит исключение NoSuchElementException")
     void deleteAct_ActDoesNotExist_ReturnsError404Page() throws Exception {
         // given
         var requestBuilder = MockMvcRequestBuilders.post("/catalogue/acts/1/delete")
@@ -170,6 +179,7 @@ class ActControllerIT {
     }
 
     @Test
+    @DisplayName("deleteAct выбросит ошибку доступа - статус 403")
     void deleteAct_UserIsNotAuthorized_ReturnsForbidden() throws Exception {
         // given
         var requestBuilder = MockMvcRequestBuilders.post("/catalogue/acts/1/delete")

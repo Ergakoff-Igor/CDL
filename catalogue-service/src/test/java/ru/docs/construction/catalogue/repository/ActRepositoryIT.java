@@ -1,5 +1,6 @@
 package ru.docs.construction.catalogue.repository;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
@@ -17,12 +18,14 @@ import static org.junit.jupiter.api.Assertions.*;
 @Sql("/sql/acts.sql")
 @Transactional
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
+@DisplayName("Интеграционные тесты ActRepository")
 class ActRepositoryIT {
 
     @Autowired
     ActRepository actRepository;
 
     @Test
+    @DisplayName("findAllBySectionLikeIgnoreCaseOrderById вернет список актов, отфильтрованный по разделу проекта с ранжироване=ием по id")
     void findAllBySectionLikeIgnoreCaseOrderById_ReturnsFilteredActsListOrderedById() {
         // given
         var filter = "%ЭМ%";
@@ -36,6 +39,7 @@ class ActRepositoryIT {
     }
 
     @Test
+    @DisplayName("findAllOrderById вернет полный список актов с ранжироване=ием по id")
     void findAllOrderById_ReturnsActsListOrderedById() {
         // given
 

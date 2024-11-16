@@ -1,5 +1,6 @@
 package ru.docs.construction.catalogue.controller;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -23,6 +24,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
+@DisplayName("Модульные тесты ActsRestController")
 class ActsRestControllerTest {
     @Mock
     ActService actService;
@@ -31,7 +33,8 @@ class ActsRestControllerTest {
     ActsRestController controller;
 
     @Test
-    void findAct_ReturnsActsList() {
+    @DisplayName("findActs отфильтрует акты по разделу проекта и вернет список актов")
+    void findActs_ReturnsActsList() {
         // given
         var filter = "АК";
 
@@ -49,6 +52,7 @@ class ActsRestControllerTest {
     }
 
     @Test
+    @DisplayName("createAct создаст акт, вернет статус noContent")
     void createAct_RequestIsValid_ReturnsNoContent() throws BindException {
         // given
         var payload = new NewActPayload("Январь", (short) 2024, "ЭМ", 2000d);
@@ -72,6 +76,7 @@ class ActsRestControllerTest {
     }
 
     @Test
+    @DisplayName("createAct вернет статус BadRequest и список ошибок валидации")
     void createAct_RequestIsInvalid_ReturnsBadRequest() {
         // given
         var payload = new NewActPayload(" ", null, " ", 2000d);
@@ -89,6 +94,7 @@ class ActsRestControllerTest {
     }
 
     @Test
+    @DisplayName("createAct вернет статус BadRequest и список ошибок валидации")
     void createAct_RequestIsInvalidAndBindResultIsBindException_ReturnsBadRequest() {
         // given
         var payload = new NewActPayload(" ", null, " ", 2000d);

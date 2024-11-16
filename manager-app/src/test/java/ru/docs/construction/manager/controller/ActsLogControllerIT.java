@@ -1,5 +1,6 @@
 package ru.docs.construction.manager.controller;
 
+import org.junit.jupiter.api.DisplayName;
 import ru.docs.construction.manager.entity.Act;
 import com.github.tomakehurst.wiremock.client.WireMock;
 import com.github.tomakehurst.wiremock.junit5.WireMockTest;
@@ -22,12 +23,14 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest
 @AutoConfigureMockMvc
 @WireMockTest(httpPort = 54321)
+@DisplayName("Интеграционные тесты ActsLogController")
 class ActsLogControllerIT {
 
     @Autowired
     MockMvc mockMvc;
 
     @Test
+    @DisplayName("getActsList отфильтрует акты по разделу проекта перенаправит на страницу списка актов")
     void getActList_ReturnsActsListPage() throws Exception {
         // given
         var requestBuilder = MockMvcRequestBuilders.get("/catalogue/acts/list")
@@ -61,6 +64,7 @@ class ActsLogControllerIT {
     }
 
     @Test
+    @DisplayName("getActsList выбросит ошибку доступа - статус 403")
     void getActList_UserIsNotAuthorized_ReturnsForbidden() throws Exception {
         // given
         var requestBuilder = MockMvcRequestBuilders.get("/catalogue/acts/list")
@@ -77,7 +81,8 @@ class ActsLogControllerIT {
     }
 
     @Test
-      void getNewActPage_ReturnsActPage() throws Exception {
+    @DisplayName("getNewActPage перенаправит на страницу создания нового акта")
+    void getNewActPage_ReturnsActPage() throws Exception {
         // given
         var requestBuilder = MockMvcRequestBuilders.get("/catalogue/acts/create")
                 .with(user("i.ergakov").roles("CONTRACTOR"));
@@ -93,6 +98,7 @@ class ActsLogControllerIT {
     }
 
     @Test
+    @DisplayName("getNewActPage выбросит ошибку доступа - статус 403")
     void getNewActPage_UserIsNotAuthorized_ReturnsForbidden() throws Exception {
         // given
         var requestBuilder = MockMvcRequestBuilders.get("/catalogue/acts/create")
@@ -108,6 +114,7 @@ class ActsLogControllerIT {
     }
 
     @Test
+    @DisplayName("createAct выбросит ошибку доступа - статус 403")
     void createAct_UserIsNotAuthorized_ReturnsForbidden() throws Exception {
         // given
         var requestBuilder = MockMvcRequestBuilders.post("/catalogue/acts/create")

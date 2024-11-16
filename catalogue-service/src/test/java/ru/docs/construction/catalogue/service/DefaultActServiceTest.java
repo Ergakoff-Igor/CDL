@@ -1,5 +1,6 @@
 package ru.docs.construction.catalogue.service;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -17,6 +18,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
+@DisplayName("Модульные тесты DefaultActService")
 class DefaultActServiceTest {
 
     @Mock
@@ -26,6 +28,7 @@ class DefaultActServiceTest {
     DefaultActService service;
 
     @Test
+    @DisplayName("findAllActs вернет полный список актов с ранжироване=ием по id")
     void findAllActs_FilterIsNotSet_ReturnsActsList() {
         // given
         var acts = LongStream.range(1, 4)
@@ -45,6 +48,7 @@ class DefaultActServiceTest {
     }
 
     @Test
+    @DisplayName("findAllActs вернет полный список актов с ранжироване=ием по id")
     void findAllActs_FilterIsBlank_ReturnsActsList() {
         // given
         var acts = LongStream.range(1, 4)
@@ -64,6 +68,7 @@ class DefaultActServiceTest {
     }
 
     @Test
+    @DisplayName("findAllActs отфильтрует акты по разделу проекта и вернет список актов с ранжироване=ием по id")
     void findAllActs_FilterIsSet_ReturnsFilteredActsList() {
         // given
         var acts = LongStream.range(1, 4)
@@ -83,6 +88,7 @@ class DefaultActServiceTest {
     }
 
     @Test
+    @DisplayName("findAct вернет акт по id")
     void findAct_ActExists_ReturnsNotEmptyOptional() {
         // given
         var product = new Act(1L, "Январь", (short) 2024, "ЭМ", 2000d, ActStatus.CHECKING_QC);
@@ -102,6 +108,7 @@ class DefaultActServiceTest {
     }
 
     @Test
+    @DisplayName("findAct вернет пустой Optional")
     void findAct_ActDoesNotExist_ReturnsEmptyOptional() {
         // given
 
@@ -117,6 +124,7 @@ class DefaultActServiceTest {
     }
 
     @Test
+    @DisplayName("createAct создаст акт, вернет новый акт")
     void createAct_ReturnsCreatedAct() {
         // given
         var month = "Январь";
@@ -139,6 +147,7 @@ class DefaultActServiceTest {
 
 
     @Test
+    @DisplayName("updateAct изменит акт")
     void updateAct_ActExists_UpdatesAct() {
         // given
         var actId = 1L;
@@ -161,6 +170,7 @@ class DefaultActServiceTest {
     }
 
     @Test
+    @DisplayName("updateAct выбросит NoSuchElementException")
     void updateAct_ActDoesNotExist_ThrowsNoSuchElementException() {
         // given
         var actId = 1L;
@@ -180,6 +190,7 @@ class DefaultActServiceTest {
     }
 
     @Test
+    @DisplayName("deleteAct удалит акт")
     void deleteAct_DeletesAct() {
         // given
         var actId = 1L;
@@ -193,6 +204,7 @@ class DefaultActServiceTest {
     }
 
     @Test
+    @DisplayName("updateActStatus изменит статус акта")
     void updateActStatus_ActExists_UpdatesActStatus() {
         // given
         var actId = 1L;
@@ -211,6 +223,7 @@ class DefaultActServiceTest {
     }
 
     @Test
+    @DisplayName("updateActStatus выбросит NoSuchElementException")
     void updateActStatus_ActDoesNotExist_ThrowsNoSuchElementException() {
         // given
         var actId = 1L;

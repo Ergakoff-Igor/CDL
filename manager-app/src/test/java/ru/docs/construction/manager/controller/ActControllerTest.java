@@ -1,5 +1,6 @@
 package ru.docs.construction.manager.controller;
 
+import org.junit.jupiter.api.DisplayName;
 import org.springframework.security.oauth2.core.oidc.user.OidcUser;
 import org.springframework.ui.Model;
 import ru.docs.construction.manager.client.BadRequestException;
@@ -27,6 +28,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
+@DisplayName("Модульные тесты ActController")
 class ActControllerTest {
 
     @Mock
@@ -45,6 +47,7 @@ class ActControllerTest {
     ActController controller;
 
     @Test
+    @DisplayName("act вернет акт по id")
     void act_ActExists_ReturnsAct() {
         // given
         var act = new Act(1L, "Февраль", (short) 2024, "ЭМ", 3000d, ActStatus.CHECKING_PTD);
@@ -62,6 +65,7 @@ class ActControllerTest {
     }
 
     @Test
+    @DisplayName("act выбросит NoSuchElementException с сообщением об ошибке")
     void act_ActDoesNotExist_ThrowsNoSuchElementException() {
         // given
 
@@ -76,6 +80,7 @@ class ActControllerTest {
     }
 
     @Test
+    @DisplayName("getAct перенаправит на страницу акта")
     void getAct_ReturnsActPage() {
         // given
 
@@ -89,6 +94,7 @@ class ActControllerTest {
     }
 
     @Test
+    @DisplayName("getActEditPage перенаправит на страницу редактирования акта")
     void getActEditPage_ReturnsActEditPage() {
         // given
 
@@ -102,6 +108,7 @@ class ActControllerTest {
     }
 
     @Test
+    @DisplayName("updateAct изменит акт и перенаправит на его страницу")
     void updateAct_RequestIsValid_RedirectsToActPage() {
         // given
         var act = new Act(1L, "Февраль", (short) 2024, "ЭМ", 3000d, ActStatus.CHECKING_PTD);
@@ -120,6 +127,7 @@ class ActControllerTest {
     }
 
     @Test
+    @DisplayName("updateAct покажет сообщение об ошибках ввода и перенаправит на страницу редактирования акта")
     void updateAct_RequestIsInvalid_ReturnsActEditPage() {
         // given
         var act = new Act(1L, "Февраль", (short) 2024, "ЭМ", 3000d, ActStatus.CHECKING_PTD);
@@ -144,6 +152,7 @@ class ActControllerTest {
     }
 
     @Test
+    @DisplayName("deleteAct удалит акт и перенаправит на страницу списка актов")
     void deleteAct_RedirectsToActsListPage() {
         // given
         var act = new Act(1L, "Февраль", (short) 2024, "ЭМ", 3000d, ActStatus.CHECKING_PTD);
@@ -159,6 +168,7 @@ class ActControllerTest {
     }
 
     @Test
+    @DisplayName("turnActStatus изменит статус акта и перенаправит на страницу списка актов")
     void turnActStatus_RequestIsValid_RedirectsToActsListPage() {
         // given
         var act = new Act(1L, "Февраль", (short) 2024, "ЭМ", 3000d, ActStatus.CHECKING_PTD);
@@ -175,6 +185,7 @@ class ActControllerTest {
     }
 
     @Test
+    @DisplayName("handleNoSuchElementException перенаправит на страницу ошибки")
     void handleNoSuchElementException_Returns404ErrorPage() {
         // given
         var exception = new NoSuchElementException("error");
@@ -189,7 +200,7 @@ class ActControllerTest {
         var result = this.controller.handleNoSuchElementException(exception, model, response, locale);
 
         // then
-        assertEquals("errors/404",  result);
+        assertEquals("errors/404", result);
         assertEquals(HttpStatus.NOT_FOUND.value(), response.getStatus());
 
         verify(this.messageSource).getMessage("error", new Object[0], "error", Locale.of("ru"));

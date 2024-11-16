@@ -31,7 +31,9 @@ class ActsLogControllerTest {
     @InjectMocks
     ActsLogController controller;
 
+
     @Test
+    @DisplayName("getActsList отфильтрует акты по разделу проекта перенаправит на страницу списка актов")
     void getActsList_ReturnsActsListPage() {
         // given
         var model = new ConcurrentModel();
@@ -53,6 +55,7 @@ class ActsLogControllerTest {
     }
 
     @Test
+    @DisplayName("getNewActPage перенаправит на страницу создания нового акта")
     void getNewActPage_ReturnsNewActPage() {
         // given
 

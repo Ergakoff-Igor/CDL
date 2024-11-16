@@ -1,5 +1,6 @@
 package ru.docs.construction.catalogue.controller;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -20,6 +21,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @Transactional
 @SpringBootTest
 @AutoConfigureMockMvc
+@DisplayName("Интеграционные тесты ActRestController")
 class ActRestControllerIT {
 
     @Autowired
@@ -27,10 +29,10 @@ class ActRestControllerIT {
 
     @Test
     @Sql("/sql/acts.sql")
-    void findAct_ActExists_ReturnsActsList() throws Exception {
+    @DisplayName("findAct вернёт акт по id")
+    void findAct_ActExists_ReturnsAct() throws Exception {
         // given
-        var requestBuilder = MockMvcRequestBuilders.get("/catalogue-api/acts")
-                .param("filter", "ЭМ")
+        var requestBuilder = MockMvcRequestBuilders.get("/catalogue-api/acts/1")
                 .with(jwt().jwt(builder -> builder.claim("scope", "view_actslog")));
 
         // when
@@ -41,15 +43,20 @@ class ActRestControllerIT {
                         status().isOk(),
                         content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON),
                         content().json("""
-                                [
-                                    {"id": 1, "month": "Февраль", "year": 2024, "section": "ЭМ", "price":  3000, "actStatus": "CHECKING_PTD"},
-                                    {"id": 3, "month": "Январь", "year": 2024, "section": "ЭМ", "price":  2000, "actStatus": "ACCEPTED"}
-                                ]""")
+                                                                {
+                                                                    "id": 1,
+                                                                    "month": "Февраль",
+                                                                    "year": 2024,
+                                                                    "section": "ЭМ",
+                                                                    "actStatus": "CHECKING_PTD"
+                                                                }
+                                """)
                 );
     }
 
     @Test
     @Sql("/sql/acts.sql")
+    @DisplayName("findAct выбросит NoSuchElementException")
     void findAct_ActDoesNotExist_ReturnsNotFound() throws Exception {
         // given
         var requestBuilder = MockMvcRequestBuilders.get("/catalogue-api/acts/5")
@@ -66,6 +73,7 @@ class ActRestControllerIT {
 
     @Test
     @Sql("/sql/acts.sql")
+    @DisplayName("findAct вернет статус Forbidden")
     void findAct_UserIsNotAuthorized_ReturnsForbidden() throws Exception {
         // given
         var requestBuilder = MockMvcRequestBuilders.get("/catalogue-api/acts/1")
@@ -82,6 +90,7 @@ class ActRestControllerIT {
 
     @Test
     @Sql("/sql/acts.sql")
+    @DisplayName("updateAct изменит акт, вернет статус noContent")
     void updateAct_RequestIsValid_ReturnsNoContent() throws Exception {
         // given
         var requestBuilder = MockMvcRequestBuilders.patch("/catalogue-api/acts/1")
@@ -106,6 +115,7 @@ class ActRestControllerIT {
 
     @Test
     @Sql("/sql/acts.sql")
+    @DisplayName("updateAct вернет статус BadRequest и список ошибок валидации")
     void updateAct_RequestIsNotValid_ReturnsBadRequest() throws Exception {
         var requestBuilder = MockMvcRequestBuilders.patch("/catalogue-api/acts/1")
                 .locale(Locale.of("ru"))
@@ -139,6 +149,7 @@ class ActRestControllerIT {
 
     @Test
     @Sql("/sql/acts.sql")
+    @DisplayName("updateAct вернет статус NotFound")
     void updateAct_ActDoesNotExist_ReturnsNotFound() throws Exception {
         // given
         var requestBuilder = MockMvcRequestBuilders.patch("/catalogue-api/acts/5")
@@ -163,6 +174,7 @@ class ActRestControllerIT {
     }
 
     @Test
+    @DisplayName("updateAct вернет статус Forbidden")
     void updateAct_UserIsNotAuthorized_ReturnsForbidden() throws Exception {
         // given
         var requestBuilder = MockMvcRequestBuilders.patch("/catalogue-api/acts/1")
@@ -188,6 +200,7 @@ class ActRestControllerIT {
 
     @Test
     @Sql("/sql/acts.sql")
+    @DisplayName("turnActStatus изменит статус акта, вернет статус noContent")
     void turnActStatus_RequestIsValid_ReturnsNoContent() throws Exception {
         // given
         var requestBuilder = MockMvcRequestBuilders.patch("/catalogue-api/acts/1/correction")
@@ -204,6 +217,7 @@ class ActRestControllerIT {
 
     @Test
     @Sql("/sql/acts.sql")
+    @DisplayName("turnActStatus вернет статус BadRequest")
     void turnActStatus_RequestIsInvalid_InvalidActStatusException() throws Exception {
         // given
         var requestBuilder = MockMvcRequestBuilders.patch("/catalogue-api/acts/1/invalid")
@@ -221,6 +235,7 @@ class ActRestControllerIT {
 
     @Test
     @Sql("/sql/acts.sql")
+    @DisplayName("turnActStatus вернет статус NotFound")
     void turnActStatus_ActDoesNotExist_ReturnsNotFound() throws Exception {
         // given
         var requestBuilder = MockMvcRequestBuilders.patch("/catalogue-api/acts/5/correction")
@@ -236,6 +251,7 @@ class ActRestControllerIT {
     }
 
     @Test
+    @DisplayName("turnActStatus вернет статус Forbidden")
     void turnActStatus_UserIsNotAuthorized_ReturnsForbidden() throws Exception {
         // given
         var requestBuilder = MockMvcRequestBuilders.patch("/catalogue-api/acts/1/correction")
@@ -252,6 +268,7 @@ class ActRestControllerIT {
 
     @Test
     @Sql("/sql/acts.sql")
+    @DisplayName("deleteAct изменит статус акта, вернет статус noContent")
     void deleteAct_ActExists_ReturnsNoContent() throws Exception {
         // given
         var requestBuilder = MockMvcRequestBuilders.delete("/catalogue-api/acts/1")
@@ -268,6 +285,7 @@ class ActRestControllerIT {
 
     @Test
     @Sql("/sql/acts.sql")
+    @DisplayName("deleteAct вернет статус NotFound")
     void deleteAct_ActDoesNotExist_ReturnsNotFound() throws Exception {
         // given
         var requestBuilder = MockMvcRequestBuilders.delete("/catalogue-api/acts/5")
@@ -283,6 +301,7 @@ class ActRestControllerIT {
     }
 
     @Test
+    @DisplayName("deleteAct вернет статус Forbidden")
     void deleteAct_UserIsNotAuthorized_ReturnsForbidden() throws Exception {
         // given
         var requestBuilder = MockMvcRequestBuilders.delete("/catalogue-api/acts/1")
@@ -296,5 +315,4 @@ class ActRestControllerIT {
                         status().isForbidden()
                 );
     }
-
 }
