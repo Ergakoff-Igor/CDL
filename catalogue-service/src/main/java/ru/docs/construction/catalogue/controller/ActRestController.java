@@ -1,5 +1,15 @@
 package ru.docs.construction.catalogue.controller;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.StringToClassMapItem;
+import io.swagger.v3.oas.annotations.headers.Header;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+import io.swagger.v3.oas.annotations.tags.Tag;
+import org.springframework.http.MediaType;
 import ru.docs.construction.catalogue.controller.payload.UpdateActPayload;
 import ru.docs.construction.catalogue.entity.Act;
 import jakarta.validation.Valid;
@@ -23,6 +33,7 @@ import java.util.Objects;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("catalogue-api/acts/{actId:\\d+}")
+@Tag(name = "Контроллер акта", description = "Управляет функциями акта")
 public class ActRestController {
 
     private final ActService actService;
@@ -36,14 +47,63 @@ public class ActRestController {
     }
 
     @GetMapping
+    @Operation(summary = "Поиск акта",
+            description = "Позволяет вернуть акт из запроса при помощи @ModelAttribute",
+            security = @SecurityRequirement(name = "keycloak")
+    )
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200",
+                    headers = @Header(name = "Content-Type", description = "Тип данных"),
+                    content = {
+                            @Content(
+                                    mediaType = MediaType.APPLICATION_JSON_VALUE,
+                                    schema = @Schema(
+                                            type = "object",
+                                            properties = {
+                                                    @StringToClassMapItem(key = "id", value = Long.class),
+                                                    @StringToClassMapItem(key = "month", value = String.class),
+                                                    @StringToClassMapItem(key = "year", value = Short.class),
+                                                    @StringToClassMapItem(key = "section", value = String.class),
+                                                    @StringToClassMapItem(key = "price", value = Double.class),
+                                                    @StringToClassMapItem(key = "actStatus", value = ActStatus.class)
+                                            }
+                                    )
+                            )
+                    }),
+            @ApiResponse(responseCode = "404", description = "Акт не найден", content = {@Content(schema = @Schema())})
+    })
     public Act findAct(@ModelAttribute("act") Act act) {
         return act;
     }
 
     @PatchMapping
+    @Operation(summary = "Изменение акта",
+            description = "Позволяет изменить акт",
+            security = @SecurityRequirement(name = "keycloak"),
+            requestBody = @io.swagger.v3.oas.annotations.parameters.RequestBody(
+                    content = @Content(
+                            mediaType = MediaType.APPLICATION_JSON_VALUE,
+                            schema = @Schema(
+                                    type = "object",
+                                    properties = {
+                                            @StringToClassMapItem(key = "month", value = String.class),
+                                            @StringToClassMapItem(key = "year", value = Short.class),
+                                            @StringToClassMapItem(key = "section", value = String.class),
+                                            @StringToClassMapItem(key = "price", value = Double.class),
+                                            @StringToClassMapItem(key = "actStatus", value = ActStatus.class)
+                                    }
+                            )
+                    )
+            ),
+            responses = {
+                    @ApiResponse(responseCode = "204", description = "Акт изменен", content = {@Content(schema = @Schema())}),
+                    @ApiResponse(responseCode = "400", description = "Ошибки валидации", content = {@Content(schema = @Schema())}),
+                    @ApiResponse(responseCode = "404", description = "Акт не найден", content = {@Content(schema = @Schema())})
+            })
     public ResponseEntity<?> updateAct(@PathVariable("actId") long actId,
                                        @Valid @RequestBody UpdateActPayload payload,
                                        BindingResult bindingResult) throws BindException {
+        ResponseEntity<?> result;
         if (bindingResult.hasErrors()) {
             if (bindingResult instanceof BindException exception) {
                 throw exception;
@@ -52,12 +112,21 @@ public class ActRestController {
             }
         } else {
             this.actService.updateAct(actId, payload.month(), payload.year(), payload.section(), payload.price(), payload.actStatus());
-            return ResponseEntity.noContent()
+            result = ResponseEntity.noContent()
                     .build();
         }
+        return result;
     }
 
     @PatchMapping("/{status}")
+    @Operation(summary = "Изменение статуса акта",
+            description = "Позволяет изменить статус акта",
+            security = @SecurityRequirement(name = "keycloak"),
+            responses = {
+                    @ApiResponse(responseCode = "204", description = "Статус акта изменен", content = {@Content(schema = @Schema())}),
+                    @ApiResponse(responseCode = "400", description = "Ошибки валидации", content = {@Content(schema = @Schema())}),
+                    @ApiResponse(responseCode = "404", description = "Акт не найден", content = {@Content(schema = @Schema())})
+            })
     public ResponseEntity<?> turnActStatus(@PathVariable("actId") long actId, @PathVariable("status") String actStatus) {
 
         switch (actStatus) {
@@ -74,6 +143,13 @@ public class ActRestController {
     }
 
     @DeleteMapping
+    @Operation(summary = "Удаление акта",
+            description = "Позволяет удалить акт",
+            security = @SecurityRequirement(name = "keycloak"),
+            responses = {
+                    @ApiResponse(responseCode = "204", description = "Акт удален", content = {@Content(schema = @Schema())}),
+                    @ApiResponse(responseCode = "404", description = "Акт не найден", content = {@Content(schema = @Schema())})
+            })
     public ResponseEntity<Void> deleteAct(@PathVariable("actId") long actId) {
         this.actService.deleteAct(actId);
         return ResponseEntity.noContent()

@@ -4,19 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="508ca5a5-2a9f-40e3-8a06-75479503d0aa" name="Changes" comment="CDL. OAuthClientHttpRequestInterceptorTest">
+    <list default="true" id="508ca5a5-2a9f-40e3-8a06-75479503d0aa" name="Changes" comment="CDL. Testing">
+      <change afterPath="$PROJECT_DIR$/catalogue-service/src/main/java/ru/docs/construction/catalogue/config/SpringDocBeans.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/keycloak/import/actsLog.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalogue-service/src/test/java/ru/docs/construction/catalogue/controller/ActRestControllerIT.java" beforeDir="false" afterPath="$PROJECT_DIR$/catalogue-service/src/test/java/ru/docs/construction/catalogue/controller/ActRestControllerIT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalogue-service/src/test/java/ru/docs/construction/catalogue/controller/ActRestControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/catalogue-service/src/test/java/ru/docs/construction/catalogue/controller/ActRestControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalogue-service/src/test/java/ru/docs/construction/catalogue/controller/ActsRestControllerIT.java" beforeDir="false" afterPath="$PROJECT_DIR$/catalogue-service/src/test/java/ru/docs/construction/catalogue/controller/ActsRestControllerIT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalogue-service/src/test/java/ru/docs/construction/catalogue/controller/ActsRestControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/catalogue-service/src/test/java/ru/docs/construction/catalogue/controller/ActsRestControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalogue-service/src/test/java/ru/docs/construction/catalogue/repository/ActRepositoryIT.java" beforeDir="false" afterPath="$PROJECT_DIR$/catalogue-service/src/test/java/ru/docs/construction/catalogue/repository/ActRepositoryIT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalogue-service/src/test/java/ru/docs/construction/catalogue/service/DefaultActServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/catalogue-service/src/test/java/ru/docs/construction/catalogue/service/DefaultActServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manager-app/src/test/java/ru/docs/construction/manager/controller/ActControllerIT.java" beforeDir="false" afterPath="$PROJECT_DIR$/manager-app/src/test/java/ru/docs/construction/manager/controller/ActControllerIT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manager-app/src/test/java/ru/docs/construction/manager/controller/ActControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/manager-app/src/test/java/ru/docs/construction/manager/controller/ActControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manager-app/src/test/java/ru/docs/construction/manager/controller/ActsLogControllerIT.java" beforeDir="false" afterPath="$PROJECT_DIR$/manager-app/src/test/java/ru/docs/construction/manager/controller/ActsLogControllerIT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manager-app/src/test/java/ru/docs/construction/manager/controller/ActsLogControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/manager-app/src/test/java/ru/docs/construction/manager/controller/ActsLogControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manager-app/src/test/java/ru/docs/construction/manager/security/OAuthClientHttpRequestInterceptorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/manager-app/src/test/java/ru/docs/construction/manager/security/OAuthClientHttpRequestInterceptorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalogue-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/catalogue-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalogue-service/src/main/java/ru/docs/construction/catalogue/config/SecurityBeans.java" beforeDir="false" afterPath="$PROJECT_DIR$/catalogue-service/src/main/java/ru/docs/construction/catalogue/config/SecurityBeans.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalogue-service/src/main/java/ru/docs/construction/catalogue/controller/ActRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/catalogue-service/src/main/java/ru/docs/construction/catalogue/controller/ActRestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalogue-service/src/main/java/ru/docs/construction/catalogue/controller/ActsRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/catalogue-service/src/main/java/ru/docs/construction/catalogue/controller/ActsRestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalogue-service/src/main/resources/application-standalone.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/catalogue-service/src/main/resources/application-standalone.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,7 +163,7 @@
     "JUnit.OAuthClientHttpRequestInterceptorTest.intercept_AuthorizationHeaderIsNotSet_AddsAuthorizationHeader.executor": "Run",
     "JUnit.catalogue in catalogue-service.executor": "Coverage",
     "JUnit.java in catalogue-service.executor": "Coverage",
-    "JUnit.manager in manager-app.executor": "Run",
+    "JUnit.manager in manager-app.executor": "Coverage",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
@@ -180,7 +177,7 @@
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Ierga/IdeaProjects/CDL/manager-app/src/test/java/ru/docs/construction/manager",
+    "last_opened_file_path": "C:/Users/Ierga/IdeaProjects/CDL/config/keycloak/import",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -204,11 +201,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Ierga\IdeaProjects\CDL\config\keycloak\import" />
       <recent name="C:\Users\Ierga\IdeaProjects\CDL\manager-app\src\test\java\ru\docs\construction\manager" />
       <recent name="C:\Users\Ierga\IdeaProjects\CDL\manager-app\src\test" />
       <recent name="C:\Users\Ierga\IdeaProjects\CDL\manager-app\src\test\java" />
       <recent name="C:\Users\Ierga\IdeaProjects\CDL\manager-app\src\test\java\ru\docs\construction\manager\config" />
-      <recent name="C:\Users\Ierga\IdeaProjects\CDL\manager-app\src\main\java\ru\docs\construction\manager" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Ierga\IdeaProjects\CDL" />
@@ -223,6 +220,7 @@
       <recent name="ru.docs.construction.catalogue.service" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ru.docs.construction.catalogue.config" />
       <recent name="ru.docs.construction.manager.config" />
       <recent name="ru.docs.construction.catalogue.controller" />
       <recent name="ru.docs.construction.manager.entity" />
@@ -417,7 +415,9 @@
       <workItem from="1731008014014" duration="3290000" />
       <workItem from="1731346569770" duration="8323000" />
       <workItem from="1731516695788" duration="9098000" />
-      <workItem from="1731737997207" duration="9871000" />
+      <workItem from="1731737997207" duration="10692000" />
+      <workItem from="1732035235767" duration="11466000" />
+      <workItem from="1732208849778" duration="7186000" />
     </task>
     <task id="LOCAL-00001" summary="CDL. MVP">
       <option name="closed" value="true" />
@@ -587,7 +587,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731522894555</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="CDL. Testing">
+      <option name="closed" value="true" />
+      <created>1731751756255</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1731751756255</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -624,7 +632,8 @@
     <MESSAGE value="CDL. ActControllerTest" />
     <MESSAGE value="CDL. ActControllerIT" />
     <MESSAGE value="CDL. OAuthClientHttpRequestInterceptorTest" />
-    <option name="LAST_COMMIT_MESSAGE" value="CDL. OAuthClientHttpRequestInterceptorTest" />
+    <MESSAGE value="CDL. Testing" />
+    <option name="LAST_COMMIT_MESSAGE" value="CDL. Testing" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
@@ -634,11 +643,11 @@
     <SUITE FILE_PATH="coverage/CDL$DefaultActServiceTest_updateActStatus_ActExists_UpdatesActStatus.ic" NAME="DefaultActServiceTest.updateActStatus_ActExists_UpdatesActStatus Coverage Results" MODIFIED="1730402509022" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>ru.docs.construction.catalogue.service.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/CDL$DefaultActServiceTest_updateAct_ActDoesNotExist_ThrowsNoSuchElementException.ic" NAME="DefaultActServiceTest.updateAct_ActDoesNotExist_ThrowsNoSuchElementException Coverage Results" MODIFIED="1730402189146" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
-      <FILTER>ru.docs.construction.catalogue.service.*</FILTER>
-    </SUITE>
     <SUITE FILE_PATH="coverage/CDL$CheckingActControllerTest_turnStatusToCorrection_RequestIsValid_ReturnsNoContent.ic" NAME="CheckingActControllerTest.turnStatusToCorrection_RequestIsValid_ReturnsNoContent Coverage Results" MODIFIED="1730315697623" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>ru.docs.construction.catalogue.controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/CDL$DefaultActServiceTest_updateAct_ActDoesNotExist_ThrowsNoSuchElementException.ic" NAME="DefaultActServiceTest.updateAct_ActDoesNotExist_ThrowsNoSuchElementException Coverage Results" MODIFIED="1730402189146" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>ru.docs.construction.catalogue.service.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/CDL$java_in_catalogue_service.ic" NAME="java in catalogue-service Coverage Results" MODIFIED="1730921850042" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
     <SUITE FILE_PATH="coverage/CDL$ActControllerIT.ic" NAME="ActControllerIT Coverage Results" MODIFIED="1731522092658" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
@@ -650,7 +659,7 @@
     <SUITE FILE_PATH="coverage/CDL$DefaultActServiceTest_findAllActs_FilterIsNotSet_ReturnsActsList.ic" NAME="DefaultActServiceTest.findAllActs_FilterIsNotSet_ReturnsActsList Coverage Results" MODIFIED="1730395738944" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>ru.docs.construction.catalogue.service.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/CDL$catalogue_in_catalogue_service.ic" NAME="catalogue in catalogue-service Coverage Results" MODIFIED="1730917423974" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/CDL$catalogue_in_catalogue_service.ic" NAME="catalogue in catalogue-service Coverage Results" MODIFIED="1731751068259" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
     <SUITE FILE_PATH="coverage/CDL$ActsLogControllerTest.ic" NAME="ActsLogControllerTest Coverage Results" MODIFIED="1731350970139" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>ru.docs.construction.manager.controller.*</FILTER>
     </SUITE>
@@ -663,7 +672,7 @@
     <SUITE FILE_PATH="coverage/CDL$DefaultActServiceTest_findAllProducts_FilterIsSet_ReturnsFilteredProductsList.ic" NAME="DefaultActServiceTest.findAllProducts_FilterIsSet_ReturnsFilteredProductsList Coverage Results" MODIFIED="1730399575332" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>ru.docs.construction.catalogue.service.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/CDL$manager_in_manager_app.ic" NAME="manager in manager-app Coverage Results" MODIFIED="1731522263865" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/CDL$manager_in_manager_app.ic" NAME="manager in manager-app Coverage Results" MODIFIED="1731751118904" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
     <SUITE FILE_PATH="coverage/CDL$ActsLogControllerIT_getNewProductPage_ReturnsProductPage.ic" NAME="ActsLogControllerIT.getNewProductPage_ReturnsProductPage Coverage Results" MODIFIED="1731003160745" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>ru.docs.construction.manager.controller.*</FILTER>
     </SUITE>
