@@ -4,16 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="508ca5a5-2a9f-40e3-8a06-75479503d0aa" name="Changes" comment="CDL. Testing">
-      <change afterPath="$PROJECT_DIR$/catalogue-service/src/main/java/ru/docs/construction/catalogue/config/SpringDocBeans.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/keycloak/import/actsLog.json" afterDir="false" />
+    <list default="true" id="508ca5a5-2a9f-40e3-8a06-75479503d0aa" name="Changes" comment="CDL. REST-Service Documentation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalogue-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/catalogue-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalogue-service/src/main/java/ru/docs/construction/catalogue/config/SecurityBeans.java" beforeDir="false" afterPath="$PROJECT_DIR$/catalogue-service/src/main/java/ru/docs/construction/catalogue/config/SecurityBeans.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalogue-service/src/main/java/ru/docs/construction/catalogue/controller/ActRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/catalogue-service/src/main/java/ru/docs/construction/catalogue/controller/ActRestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalogue-service/src/main/java/ru/docs/construction/catalogue/controller/ActsRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/catalogue-service/src/main/java/ru/docs/construction/catalogue/controller/ActsRestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalogue-service/src/main/resources/application-standalone.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/catalogue-service/src/main/resources/application-standalone.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,140 +58,140 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "JUnit.ActControllerIT.deleteAct_ActDoesNotExist_ReturnsError404Page.executor": "Run",
-    "JUnit.ActControllerIT.deleteAct_ActExists_RedirectsToActsListPage.executor": "Run",
-    "JUnit.ActControllerIT.deleteAct_UserIsNotAuthorized_ReturnsForbidden.executor": "Run",
-    "JUnit.ActControllerIT.deleteProduct_ProductExists_RedirectsToProductsListPage.executor": "Run",
-    "JUnit.ActControllerIT.executor": "Coverage",
-    "JUnit.ActControllerIT.getActEditPage_ActDoesNotExist_ReturnsError404Page.executor": "Run",
-    "JUnit.ActControllerIT.getActEditPage_ActExists_ReturnsActEditPage.executor": "Run",
-    "JUnit.ActControllerIT.getActEditPage_UserIsNotAuthorized_ReturnsForbidden.executor": "Run",
-    "JUnit.ActControllerIT.getAct_ActExists_ReturnsActPage.executor": "Run",
-    "JUnit.ActControllerIT.getAct_UserIsNotAuthorized_ReturnsForbidden.executor": "Run",
-    "JUnit.ActControllerIT.updateAct_ActDoesNotExist_ReturnsError404Page.executor": "Run",
-    "JUnit.ActControllerIT.updateAct_RequestIsValid_RedirectsToActPage.executor": "Run",
-    "JUnit.ActControllerIT.updateAct_UserIsNotAuthorized_ReturnsForbidden.executor": "Run",
-    "JUnit.ActControllerTest.act_ActDoesNotExist_ThrowsNoSuchElementException.executor": "Run",
-    "JUnit.ActControllerTest.act_ActExists_ReturnsAct.executor": "Run",
-    "JUnit.ActControllerTest.deleteAct_RedirectsToActsListPage.executor": "Run",
-    "JUnit.ActControllerTest.executor": "Coverage",
-    "JUnit.ActControllerTest.getActEditPage_ReturnsActEditPage.executor": "Run",
-    "JUnit.ActControllerTest.getAct_ReturnsActPage.executor": "Run",
-    "JUnit.ActControllerTest.handleNoSuchElementException_Returns404ErrorPage.executor": "Run",
-    "JUnit.ActControllerTest.turnActStatus_RequestIsValid_RedirectsToActsListPage.executor": "Run",
-    "JUnit.ActControllerTest.updateAct_RequestIsInvalid_ReturnsActEditPage.executor": "Run",
-    "JUnit.ActControllerTest.updateAct_RequestIsValid_RedirectsToActPage.executor": "Run",
-    "JUnit.ActRepositoryIT.findAllBySectionLikeIgnoreCaseOrderById_ReturnsFilteredActsList.executor": "Coverage",
-    "JUnit.ActRepositoryIT.findAllOrderById_ReturnsActsListOrderedById.executor": "Coverage",
-    "JUnit.ActRepositoryTest.findAllBySectionLikeIgnoreCaseOrderById_ReturnsFilteredActsList.executor": "Run",
-    "JUnit.ActRestControllerIT.deleteAct_ActDoesNotExist_ReturnsNotFound.executor": "Run",
-    "JUnit.ActRestControllerIT.deleteAct_ActExists_ReturnsNoContent.executor": "Coverage",
-    "JUnit.ActRestControllerIT.deleteAct_UserIsNotAuthorized_ReturnsForbidden.executor": "Run",
-    "JUnit.ActRestControllerIT.executor": "Coverage",
-    "JUnit.ActRestControllerIT.findAct_ActDoesNotExist_ReturnsNotFound.executor": "Coverage",
-    "JUnit.ActRestControllerIT.findAct_ActExists_ReturnsAct.executor": "Run",
-    "JUnit.ActRestControllerIT.findAct_ActExists_ReturnsActsList.executor": "Coverage",
-    "JUnit.ActRestControllerIT.findAct_UserIsNotAuthorized_ReturnsForbidden.executor": "Coverage",
-    "JUnit.ActRestControllerIT.turnActStatus_RequestIsInvalid_InvalidActStatusException.executor": "Run",
-    "JUnit.ActRestControllerIT.turnActStatus_UserIsNotAuthorized_ReturnsForbidden.executor": "Run",
-    "JUnit.ActRestControllerIT.turnStatusToCorrection_ActDoesNotExist_ReturnsNotFound.executor": "Run",
-    "JUnit.ActRestControllerIT.turnStatusToCorrection_RequestIsInvalid_InvalidActStatusException.executor": "Run",
-    "JUnit.ActRestControllerIT.turnStatusToCorrection_RequestIsValid_ReturnsNoContent.executor": "Run",
-    "JUnit.ActRestControllerIT.turnStatusToCorrection_ReturnsNoContent.executor": "Run",
-    "JUnit.ActRestControllerIT.updateAct_ActDoesNotExist_ReturnsNotFound.executor": "Run",
-    "JUnit.ActRestControllerIT.updateAct_RequestIsNotValid_ReturnsBadRequest.executor": "Run",
-    "JUnit.ActRestControllerIT.updateAct_RequestIsValid_ReturnsNoContent.executor": "Run",
-    "JUnit.ActRestControllerIT.updateAct_UserIsNotAuthorized_ReturnsForbidden.executor": "Run",
-    "JUnit.ActRestControllerTest.executor": "Coverage",
-    "JUnit.ActRestControllerTest.handleInvalidActStatusException_ReturnsBadRequest.executor": "Run",
-    "JUnit.ActRestControllerTest.handleNoSuchElementException_ReturnsNotFound.executor": "Run",
-    "JUnit.ActRestControllerTest.turnStatusToCorrection_RequestIsValid_ReturnsNoContent.executor": "Coverage",
-    "JUnit.ActRestControllerTest.turnStatusToCorrection_RequestUpdateActStatusToAccepted_ReturnsNoContent.executor": "Coverage",
-    "JUnit.ActRestControllerTest.turnStatusToCorrection_RequestUpdateActStatusToCheckingBdc_ReturnsNoContent.executor": "Coverage",
-    "JUnit.ActRestControllerTest.turnStatusToCorrection_RequestUpdateActStatusToCheckingPtd_ReturnsNoContent.executor": "Coverage",
-    "JUnit.ActRestControllerTest.turnStatusToCorrection_RequestUpdateActStatusToCheckingQc_ReturnsNoContent.executor": "Coverage",
-    "JUnit.ActRestControllerTest.turnStatusToCorrection_RequestUpdateInvalidActStatus_ThrowsInvalidActStatusException.executor": "Run",
-    "JUnit.ActRestControllerTestIT.findAct_ActExists_ReturnsActsList.executor": "Coverage",
-    "JUnit.ActsLogControllerIT.createAct_RequestIsValid_RedirectsToActPage.executor": "Run",
-    "JUnit.ActsLogControllerIT.createAct_UserIsNotAuthorized_ReturnsForbidden.executor": "Coverage",
-    "JUnit.ActsLogControllerIT.createProduct_RequestIsInvalid_ReturnsNewProductPage.executor": "Run",
-    "JUnit.ActsLogControllerIT.executor": "Run",
-    "JUnit.ActsLogControllerIT.getActList_ReturnsActsListPage.executor": "Run",
-    "JUnit.ActsLogControllerIT.getActList_UserIsNotAuthorized_ReturnsForbidden.executor": "Run",
-    "JUnit.ActsLogControllerIT.getNewActPage_UserIsNotAuthorized_ReturnsForbidden.executor": "Run",
-    "JUnit.ActsLogControllerIT.getNewProductPage_ReturnsProductPage.executor": "Run",
-    "JUnit.ActsLogControllerIT.getProductList_ReturnsProductsListPage.executor": "Run",
-    "JUnit.ActsLogControllerIT.getProductList_UserIsNotAuthorized_ReturnsForbidden.executor": "Run",
-    "JUnit.ActsLogControllerTest.createAct_RequestIsInvalid_ReturnsActFormWithErrors.executor": "Coverage",
-    "JUnit.ActsLogControllerTest.createAct_RequestIsValid_ReturnsRedirectionToActPage.executor": "Coverage",
-    "JUnit.ActsLogControllerTest.executor": "Coverage",
-    "JUnit.ActsLogControllerTest.getActsList_ReturnsActsListPage.executor": "Run",
-    "JUnit.ActsLogControllerTest.getNewActPage_ReturnsNewActPage.executor": "Coverage",
-    "JUnit.ActsRestControllerIT.createAct_RequestIsInvalid_ReturnsProblemDetail.executor": "Coverage",
-    "JUnit.ActsRestControllerIT.createAct_RequestIsValid_ReturnsNewAct.executor": "Run",
-    "JUnit.ActsRestControllerIT.createAct_UserIsNotAuthorized_ReturnsForbidden.executor": "Coverage",
-    "JUnit.ActsRestControllerIT.executor": "Run",
-    "JUnit.ActsRestControllerIT.findActs_ReturnsActsList.executor": "Run",
-    "JUnit.ActsRestControllerIT.findProducts_UserIsNotAuthorized_ReturnsForbidden.executor": "Coverage",
-    "JUnit.ActsRestControllerTest.executor": "Coverage",
-    "JUnit.ActsRestControllerTest.findAct_ReturnsActsList.executor": "Run",
-    "JUnit.CheckingActControllerTest.turnStatusToCorrection_RequestIsValid_ReturnsNoContent.executor": "Coverage",
-    "JUnit.DefaultActServiceTest.createAct_ReturnsCreatedAct.executor": "Coverage",
-    "JUnit.DefaultActServiceTest.deleteAct_DeletesAct.executor": "Coverage",
-    "JUnit.DefaultActServiceTest.executor": "Coverage",
-    "JUnit.DefaultActServiceTest.findAct_ActDoesNotExist_ReturnsEmptyOptional.executor": "Run",
-    "JUnit.DefaultActServiceTest.findAct_ProductDoesNotExist_ReturnsEmptyOptional.executor": "Coverage",
-    "JUnit.DefaultActServiceTest.findAct_ProductExists_ReturnsNotEmptyOptional.executor": "Coverage",
-    "JUnit.DefaultActServiceTest.findAllActs_FilterIsBlank_ReturnsActsList.executor": "Coverage",
-    "JUnit.DefaultActServiceTest.findAllActs_FilterIsNotSet_ReturnsActsList.executor": "Coverage",
-    "JUnit.DefaultActServiceTest.findAllProducts_FilterIsSet_ReturnsFilteredProductsList.executor": "Coverage",
-    "JUnit.DefaultActServiceTest.updateActStatus_ActDoesNotExist_ThrowsNoSuchElementException.executor": "Coverage",
-    "JUnit.DefaultActServiceTest.updateActStatus_ActExists_UpdatesActStatus.executor": "Coverage",
-    "JUnit.DefaultActServiceTest.updateAct_ActDoesNotExist_ThrowsNoSuchElementException.executor": "Coverage",
-    "JUnit.DefaultActServiceTest.updateAct_ActExists_UpdatesAct.executor": "Coverage",
-    "JUnit.OAuthClientHttpRequestInterceptorTest.executor": "Run",
-    "JUnit.OAuthClientHttpRequestInterceptorTest.intercept_AuthorizationHeaderIsNotSet_AddsAuthorizationHeader.executor": "Run",
-    "JUnit.catalogue in catalogue-service.executor": "Coverage",
-    "JUnit.java in catalogue-service.executor": "Coverage",
-    "JUnit.manager in manager-app.executor": "Coverage",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.CatalogueServiceApplication.executor": "Run",
-    "Spring Boot.ManagerApplication.executor": "Run",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Ierga/IdeaProjects/CDL/config/keycloak/import",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "database.query.execution",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;JUnit.ActControllerIT.deleteAct_ActDoesNotExist_ReturnsError404Page.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ActControllerIT.deleteAct_ActExists_RedirectsToActsListPage.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ActControllerIT.deleteAct_UserIsNotAuthorized_ReturnsForbidden.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ActControllerIT.deleteProduct_ProductExists_RedirectsToProductsListPage.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ActControllerIT.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.ActControllerIT.getActEditPage_ActDoesNotExist_ReturnsError404Page.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ActControllerIT.getActEditPage_ActExists_ReturnsActEditPage.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ActControllerIT.getActEditPage_UserIsNotAuthorized_ReturnsForbidden.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ActControllerIT.getAct_ActExists_ReturnsActPage.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ActControllerIT.getAct_UserIsNotAuthorized_ReturnsForbidden.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ActControllerIT.updateAct_ActDoesNotExist_ReturnsError404Page.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ActControllerIT.updateAct_RequestIsValid_RedirectsToActPage.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ActControllerIT.updateAct_UserIsNotAuthorized_ReturnsForbidden.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ActControllerTest.act_ActDoesNotExist_ThrowsNoSuchElementException.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ActControllerTest.act_ActExists_ReturnsAct.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ActControllerTest.deleteAct_RedirectsToActsListPage.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ActControllerTest.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.ActControllerTest.getActEditPage_ReturnsActEditPage.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ActControllerTest.getAct_ReturnsActPage.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ActControllerTest.handleNoSuchElementException_Returns404ErrorPage.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ActControllerTest.turnActStatus_RequestIsValid_RedirectsToActsListPage.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ActControllerTest.updateAct_RequestIsInvalid_ReturnsActEditPage.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ActControllerTest.updateAct_RequestIsValid_RedirectsToActPage.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ActRepositoryIT.findAllBySectionLikeIgnoreCaseOrderById_ReturnsFilteredActsList.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.ActRepositoryIT.findAllOrderById_ReturnsActsListOrderedById.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.ActRepositoryTest.findAllBySectionLikeIgnoreCaseOrderById_ReturnsFilteredActsList.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ActRestControllerIT.deleteAct_ActDoesNotExist_ReturnsNotFound.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ActRestControllerIT.deleteAct_ActExists_ReturnsNoContent.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.ActRestControllerIT.deleteAct_UserIsNotAuthorized_ReturnsForbidden.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ActRestControllerIT.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.ActRestControllerIT.findAct_ActDoesNotExist_ReturnsNotFound.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.ActRestControllerIT.findAct_ActExists_ReturnsAct.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ActRestControllerIT.findAct_ActExists_ReturnsActsList.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.ActRestControllerIT.findAct_UserIsNotAuthorized_ReturnsForbidden.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.ActRestControllerIT.turnActStatus_RequestIsInvalid_InvalidActStatusException.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ActRestControllerIT.turnActStatus_UserIsNotAuthorized_ReturnsForbidden.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ActRestControllerIT.turnStatusToCorrection_ActDoesNotExist_ReturnsNotFound.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ActRestControllerIT.turnStatusToCorrection_RequestIsInvalid_InvalidActStatusException.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ActRestControllerIT.turnStatusToCorrection_RequestIsValid_ReturnsNoContent.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ActRestControllerIT.turnStatusToCorrection_ReturnsNoContent.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ActRestControllerIT.updateAct_ActDoesNotExist_ReturnsNotFound.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ActRestControllerIT.updateAct_RequestIsNotValid_ReturnsBadRequest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ActRestControllerIT.updateAct_RequestIsValid_ReturnsNoContent.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ActRestControllerIT.updateAct_UserIsNotAuthorized_ReturnsForbidden.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ActRestControllerTest.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.ActRestControllerTest.handleInvalidActStatusException_ReturnsBadRequest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ActRestControllerTest.handleNoSuchElementException_ReturnsNotFound.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ActRestControllerTest.turnStatusToCorrection_RequestIsValid_ReturnsNoContent.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.ActRestControllerTest.turnStatusToCorrection_RequestUpdateActStatusToAccepted_ReturnsNoContent.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.ActRestControllerTest.turnStatusToCorrection_RequestUpdateActStatusToCheckingBdc_ReturnsNoContent.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.ActRestControllerTest.turnStatusToCorrection_RequestUpdateActStatusToCheckingPtd_ReturnsNoContent.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.ActRestControllerTest.turnStatusToCorrection_RequestUpdateActStatusToCheckingQc_ReturnsNoContent.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.ActRestControllerTest.turnStatusToCorrection_RequestUpdateInvalidActStatus_ThrowsInvalidActStatusException.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ActRestControllerTestIT.findAct_ActExists_ReturnsActsList.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.ActsLogControllerIT.createAct_RequestIsValid_RedirectsToActPage.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ActsLogControllerIT.createAct_UserIsNotAuthorized_ReturnsForbidden.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.ActsLogControllerIT.createProduct_RequestIsInvalid_ReturnsNewProductPage.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ActsLogControllerIT.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ActsLogControllerIT.getActList_ReturnsActsListPage.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ActsLogControllerIT.getActList_UserIsNotAuthorized_ReturnsForbidden.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ActsLogControllerIT.getNewActPage_UserIsNotAuthorized_ReturnsForbidden.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ActsLogControllerIT.getNewProductPage_ReturnsProductPage.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ActsLogControllerIT.getProductList_ReturnsProductsListPage.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ActsLogControllerIT.getProductList_UserIsNotAuthorized_ReturnsForbidden.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ActsLogControllerTest.createAct_RequestIsInvalid_ReturnsActFormWithErrors.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.ActsLogControllerTest.createAct_RequestIsValid_ReturnsRedirectionToActPage.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.ActsLogControllerTest.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.ActsLogControllerTest.getActsList_ReturnsActsListPage.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ActsLogControllerTest.getNewActPage_ReturnsNewActPage.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.ActsRestControllerIT.createAct_RequestIsInvalid_ReturnsProblemDetail.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.ActsRestControllerIT.createAct_RequestIsValid_ReturnsNewAct.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ActsRestControllerIT.createAct_UserIsNotAuthorized_ReturnsForbidden.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.ActsRestControllerIT.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ActsRestControllerIT.findActs_ReturnsActsList.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ActsRestControllerIT.findProducts_UserIsNotAuthorized_ReturnsForbidden.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.ActsRestControllerTest.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.ActsRestControllerTest.findAct_ReturnsActsList.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CheckingActControllerTest.turnStatusToCorrection_RequestIsValid_ReturnsNoContent.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.DefaultActServiceTest.createAct_ReturnsCreatedAct.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.DefaultActServiceTest.deleteAct_DeletesAct.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.DefaultActServiceTest.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.DefaultActServiceTest.findAct_ActDoesNotExist_ReturnsEmptyOptional.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DefaultActServiceTest.findAct_ProductDoesNotExist_ReturnsEmptyOptional.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.DefaultActServiceTest.findAct_ProductExists_ReturnsNotEmptyOptional.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.DefaultActServiceTest.findAllActs_FilterIsBlank_ReturnsActsList.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.DefaultActServiceTest.findAllActs_FilterIsNotSet_ReturnsActsList.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.DefaultActServiceTest.findAllProducts_FilterIsSet_ReturnsFilteredProductsList.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.DefaultActServiceTest.updateActStatus_ActDoesNotExist_ThrowsNoSuchElementException.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.DefaultActServiceTest.updateActStatus_ActExists_UpdatesActStatus.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.DefaultActServiceTest.updateAct_ActDoesNotExist_ThrowsNoSuchElementException.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.DefaultActServiceTest.updateAct_ActExists_UpdatesAct.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.OAuthClientHttpRequestInterceptorTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.OAuthClientHttpRequestInterceptorTest.intercept_AuthorizationHeaderIsNotSet_AddsAuthorizationHeader.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.catalogue in catalogue-service.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.java in catalogue-service.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.manager in manager-app.executor&quot;: &quot;Coverage&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.CatalogueServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ManagerApplication.executor&quot;: &quot;Run&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Ierga/IdeaProjects/CDL/config/keycloak/import&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;database.query.execution&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ],
-    "com.intellij.ide.scratch.LRUPopupBuilder$1/": [
-      "PostgreSQL",
-      "GenericSQL"
+    &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/&quot;: [
+      &quot;PostgreSQL&quot;,
+      &quot;GenericSQL&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Ierga\IdeaProjects\CDL\config\keycloak\import" />
@@ -417,7 +410,8 @@
       <workItem from="1731516695788" duration="9098000" />
       <workItem from="1731737997207" duration="10692000" />
       <workItem from="1732035235767" duration="11466000" />
-      <workItem from="1732208849778" duration="7186000" />
+      <workItem from="1732208849778" duration="7427000" />
+      <workItem from="1732639143827" duration="1621000" />
     </task>
     <task id="LOCAL-00001" summary="CDL. MVP">
       <option name="closed" value="true" />
@@ -595,7 +589,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731751756255</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="CDL. REST-Service Documentation">
+      <option name="closed" value="true" />
+      <created>1732216127296</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1732216127296</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -633,7 +635,8 @@
     <MESSAGE value="CDL. ActControllerIT" />
     <MESSAGE value="CDL. OAuthClientHttpRequestInterceptorTest" />
     <MESSAGE value="CDL. Testing" />
-    <option name="LAST_COMMIT_MESSAGE" value="CDL. Testing" />
+    <MESSAGE value="CDL. REST-Service Documentation" />
+    <option name="LAST_COMMIT_MESSAGE" value="CDL. REST-Service Documentation" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
